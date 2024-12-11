@@ -4,14 +4,6 @@ using System.Windows.Forms;
 using bladeRF_GUI_v1.UserControls;
 
 
-// To Do List
-
-
-    // ayarlar sekmesi yapılacak ve kullanıcının bir kere girmesi sağlacanak
-
-    // ----------şimdilik----------
-    // cihaza veri gönderme uygulaması yapılacak
-    // cli arayüzü düzenlenecek
 
 namespace bladeRF_GUI_v1
 {
