@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bladeRF_GUI_v1", "bladeRF_GUI_v1.csproj", "{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C670618-A8A8-465F-9E03-E27D53684B4A}
+	EndGlobalSection
+EndGlobal

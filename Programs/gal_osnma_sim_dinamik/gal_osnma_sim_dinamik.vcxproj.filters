@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{a83dac0c-2d1f-421b-b302-0bc268a9493c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\conversion.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ephemgal.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fifoBuffer.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gal-sdr-sim.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\galsignal.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\galWord.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hackrf-tr.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\motionType.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\readTestvectors.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\receiver.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\satListType.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\signalControl.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uc_birim.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\updateThread.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gal_osnma_sim_dinamik.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\constants.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\conversion.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CRC_CODE.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ephemgal.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fifoBuffer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gal-sdr-sim.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\galsignal.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\galWord.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hackrf-tr.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\motionType.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\outputConf.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRN_CODE.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\readTestvectors.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\receiver.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\satDataType.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\satListType.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\signalControl.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\timeType.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\type.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uc_birim.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="include\updateThread.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
