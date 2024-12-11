@@ -74,6 +74,7 @@ namespace bladeRF_GUI_v1.HelpersForms
                 case 4:
                     baslik.Text = "Adım 4: Cihazı yapılandırın ve simulasyonu kontrol edin.";
                     step_button.Text = "Bitir";
+                    uc_CihazYapilandir.guncelle();
                     helper_main_panel.Controls.Add(uc_CihazYapilandir);
                     break;
                 case 5:

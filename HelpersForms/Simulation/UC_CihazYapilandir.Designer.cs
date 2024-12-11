@@ -51,10 +51,10 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cihaz_kur_picbox = new System.Windows.Forms.PictureBox();
-            this.sim_dosya_adi_textbox = new System.Windows.Forms.TextBox();
-            this.tttextbox = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bladerf_tekrar_sayisi_textbox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.calistirilacak_dosya_adi_textbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -324,10 +324,10 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.cihaz_kur_picbox, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.sim_dosya_adi_textbox, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.tttextbox, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.bladerf_tekrar_sayisi_textbox, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.bladerf_tekrar_sayisi_textbox, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.calistirilacak_dosya_adi_textbox, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(575, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -363,31 +363,11 @@
             this.cihaz_kur_picbox.TabStop = false;
             this.cihaz_kur_picbox.Click += new System.EventHandler(this.Cihaz_kur_picbox_Click);
             // 
-            // sim_dosya_adi_textbox
-            // 
-            this.sim_dosya_adi_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sim_dosya_adi_textbox.Location = new System.Drawing.Point(348, 195);
-            this.sim_dosya_adi_textbox.Name = "sim_dosya_adi_textbox";
-            this.sim_dosya_adi_textbox.Size = new System.Drawing.Size(153, 20);
-            this.sim_dosya_adi_textbox.TabIndex = 18;
-            this.sim_dosya_adi_textbox.Text = "gpsgal.bin";
-            this.sim_dosya_adi_textbox.TextChanged += new System.EventHandler(this.Sim_dosya_adi_textbox_TextChanged);
-            // 
-            // tttextbox
-            // 
-            this.tttextbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tttextbox.AutoSize = true;
-            this.tttextbox.Location = new System.Drawing.Point(82, 199);
-            this.tttextbox.Name = "tttextbox";
-            this.tttextbox.Size = new System.Drawing.Size(119, 13);
-            this.tttextbox.TabIndex = 16;
-            this.tttextbox.Text = "Calistirilacak Dosya Adı ";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 336);
+            this.label2.Location = new System.Drawing.Point(107, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 19;
@@ -396,11 +376,31 @@
             // bladerf_tekrar_sayisi_textbox
             // 
             this.bladerf_tekrar_sayisi_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bladerf_tekrar_sayisi_textbox.Location = new System.Drawing.Point(348, 332);
+            this.bladerf_tekrar_sayisi_textbox.Location = new System.Drawing.Point(400, 195);
             this.bladerf_tekrar_sayisi_textbox.Name = "bladerf_tekrar_sayisi_textbox";
-            this.bladerf_tekrar_sayisi_textbox.Size = new System.Drawing.Size(153, 20);
+            this.bladerf_tekrar_sayisi_textbox.Size = new System.Drawing.Size(49, 20);
             this.bladerf_tekrar_sayisi_textbox.TabIndex = 20;
             this.bladerf_tekrar_sayisi_textbox.Text = "1";
+            this.bladerf_tekrar_sayisi_textbox.TextChanged += new System.EventHandler(this.bladerf_tekrar_sayisi_textbox_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(82, 336);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Çalıştırılacak Dosya Adı ";
+            // 
+            // calistirilacak_dosya_adi_textbox
+            // 
+            this.calistirilacak_dosya_adi_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.calistirilacak_dosya_adi_textbox.Enabled = false;
+            this.calistirilacak_dosya_adi_textbox.Location = new System.Drawing.Point(350, 332);
+            this.calistirilacak_dosya_adi_textbox.Name = "calistirilacak_dosya_adi_textbox";
+            this.calistirilacak_dosya_adi_textbox.Size = new System.Drawing.Size(150, 20);
+            this.calistirilacak_dosya_adi_textbox.TabIndex = 22;
             // 
             // UC_CihazYapilandir
             // 
@@ -447,9 +447,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox cihaz_kur_picbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox sim_dosya_adi_textbox;
-        private System.Windows.Forms.Label tttextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox bladerf_tekrar_sayisi_textbox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox calistirilacak_dosya_adi_textbox;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace bladeRF_GUI_v1.HelpersForms
 {
@@ -21,9 +22,37 @@ namespace bladeRF_GUI_v1.HelpersForms
             InitializeComponent();
          
             _sim_cfg = sim_cfg;
-            cihaz_model_combobox.SelectedIndex = 0;       
-        }
+            cihaz_model_combobox.SelectedIndex = 1;
+            guncelle();
 
+        }
+        public void guncelle()
+        {
+
+            // To Do : Cihazı kullan sekmesi tam detaylı basit bir arayüzde yapılacak. Bu yardımcının amacına uymadığı için buraya koyulmayacaktır.
+            //if (Directory.Exists(_sim_cfg.galileo_cikti_klasor_yolu))
+            //{
+            //    string[] files = Directory.GetFiles(_sim_cfg.galileo_cikti_klasor_yolu); // Dosyaları al.
+            //    foreach (string file in files)
+            //    {
+            //        calisacak_dosya_adi_combobox.Items.Add(Path.GetFileName(file)); // Sadece dosya adını ekle.
+            //    }
+            //}
+
+            // -----simdilik -----
+            if (_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
+            {
+                calistirilacak_dosya_adi_textbox.Text = _sim_cfg.sim_csv_cikti_dosya_adi;
+            }
+            else if (_sim_cfg.gps_aktif && !_sim_cfg.galileo_aktif)
+            {
+                calistirilacak_dosya_adi_textbox.Text = _sim_cfg.gps_cikti_dosya_adi;
+            }
+            else if (!_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
+            {
+                calistirilacak_dosya_adi_textbox.Text = _sim_cfg.galileo_cikti_dosya_adi;
+            }
+        }
         private async void Cihaz_ac_button_Click(object sender, EventArgs e)
         {
             try
@@ -51,6 +80,7 @@ namespace bladeRF_GUI_v1.HelpersForms
 
         private async void Cihaz_kur_picbox_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor; 
 
             StringBuilder commandBuilder = new StringBuilder();
 
@@ -82,19 +112,19 @@ namespace bladeRF_GUI_v1.HelpersForms
                     }
 
                     // Komut oluşturma
-                    commandBuilder.Append($"tx config file={_sim_cfg.galileo_cikti_klasor_yolu}\\{_sim_cfg.sim_csv_cikti_dosya_adi} format={format} repeat=1 channel=1,2;");
+                    commandBuilder.Append($"tx config file={_sim_cfg.galileo_cikti_klasor_yolu}\\{_sim_cfg.sim_csv_cikti_dosya_adi} format={format} repeat={_sim_cfg.bladerf_tekrar} channel=1,2;");
                    
                 }
                 else if (_sim_cfg.gps_aktif && !_sim_cfg.galileo_aktif)
                 {
                     commandBuilder.Append($"set gain tx1 {_sim_cfg.bladerf_anten_kazanci};");
-                    commandBuilder.Append($"tx config file={_sim_cfg.gps_cikti_klasor_yolu}\\{_sim_cfg.gps_cikti_dosya_adi} format=bin repeat=1 channel=1;");
+                    commandBuilder.Append($"tx config file={_sim_cfg.gps_cikti_klasor_yolu}\\{_sim_cfg.gps_cikti_dosya_adi} format=bin repeat={_sim_cfg.bladerf_tekrar} channel=1;");
                 }
                 else if (!_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
                 {
 
                     commandBuilder.Append($"set gain tx1 {_sim_cfg.bladerf_anten_kazanci};");
-                    commandBuilder.Append($"tx config file={_sim_cfg.galileo_cikti_klasor_yolu}\\{_sim_cfg.galileo_cikti_dosya_adi} format=bin repeat=1 channel=1;");
+                    commandBuilder.Append($"tx config file={_sim_cfg.galileo_cikti_klasor_yolu}\\{_sim_cfg.galileo_cikti_dosya_adi} format=bin repeat={_sim_cfg.bladerf_tekrar} channel=1;");
                 }
             }
             else // bladeRF v1
@@ -129,10 +159,11 @@ namespace bladeRF_GUI_v1.HelpersForms
 
             cihaz_bilgisi_richtextbox.SelectionStart = cihaz_bilgisi_richtextbox.Text.Length;
             cihaz_bilgisi_richtextbox.ScrollToCaret();
+            Cursor = Cursors.Default;
         }
 
 
-        
+
 
         private void cikti_yaz(string argumanlar, string cikti)
         {
@@ -195,10 +226,9 @@ namespace bladeRF_GUI_v1.HelpersForms
             _sim_cfg.bladerf_anten_kazanci = tx_gain_textbox.Text;
         }
 
-        private void Sim_dosya_adi_textbox_TextChanged(object sender, EventArgs e)
+        private void bladerf_tekrar_sayisi_textbox_TextChanged(object sender, EventArgs e)
         {
-            _sim_cfg.sim_csv_cikti_dosya_adi = sim_dosya_adi_textbox.Text;
+            _sim_cfg.bladerf_tekrar = bladerf_tekrar_sayisi_textbox.Text;
         }
-
     }
 }
