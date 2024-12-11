@@ -1,0 +1,15 @@
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\gal_osnma_sim.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\conversion.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\ephemgal.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\fifoBuffer.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\fifoBuffer.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\gal-sdr-sim.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\galsignal.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\galsignal.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\galWord.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\galWord.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\hackrf-tr.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\hackrf-tr.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\motionType.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\motionType.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\readTestvectors.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\readTestvectors.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\receiver.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\receiver.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\satListType.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\satListType.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\signalControl.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\signalControl.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\uc_birim.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\uc_birim.obj
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\updateThread.c;C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\gal_osnma_sim\x64\Release\updateThread.obj

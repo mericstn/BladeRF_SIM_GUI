@@ -1,0 +1,30 @@
+﻿  gal_osnma_sim_dinamik.c
+  gal-sdr-sim.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(143): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(196): warning C4101: 'toe_utc': unreferenced local variable
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(196): warning C4101: 'toc_utc': unreferenced local variable
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(313): warning C4028: formal parameter 1 different from declaration
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(440): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\gal-sdr-sim.c(440): note: consider using '%zd' in the format string
+  motionType.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\motionType.c(42): warning C4028: formal parameter 2 different from declaration
+  readTestvectors.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\readTestvectors.c(397): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\readTestvectors.c(425): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\readTestvectors.c(405): warning C4102: 'endwhile': unreferenced label
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\readTestvectors.c(479): warning C4267: 'function': conversion from 'size_t' to 'long', possible loss of data
+  receiver.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\receiver.c(49): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  satListType.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\satListType.c(198): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\src\satListType.c(394): warning C4028: formal parameter 1 different from declaration
+  updateThread.c
+  Generating code
+  2 of 69 functions ( 2.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  gal_osnma_sim_dinamik.vcxproj -> C:\Users\PC_3740\source\repos\gal_osnma_sim_dinamik\x64\Release\gal_osnma_sim_dinamik.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

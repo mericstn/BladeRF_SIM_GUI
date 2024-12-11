@@ -1,3 +1,8 @@
-﻿.vs
-Programs
-Outputs
+﻿Outputs
+Programs/bladeRF
+Programs/ez
+Programs/gal_osnma_sim.7z
+Programs/gal_osnma_sim_dinamik.7z
+Programs/radioconda
+Programs/SDR_radio
+Programs/SatgenNMEA

@@ -1,0 +1,54 @@
+﻿  gal_osnma_sim.c
+  conversion.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(289,20): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(293,21): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(297,13): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(374,20): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(378,21): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(382,13): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+  ephemgal.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(97,35): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(100,21): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(108,30): warning C4244: '-=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(112,30): warning C4244: '+=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+  fifoBuffer.c
+  gal-sdr-sim.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(32,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(33,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(34,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(35,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(37,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(40,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(41,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(42,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(43,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(44,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(45,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(46,2): warning C4305: 'başlatılıyor': 'double' iken 'float' olarak kesildi
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(141,34): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(192,23): warning C4101: 'toe_utc': yerel değişken başvurusu kaldırıldı
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(192,14): warning C4101: 'toc_utc': yerel değişken başvurusu kaldırıldı
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\gal-sdr-sim.c(436,12): warning C4477: 'printf' : '%d' biçim dizesi 'int' türü bir bağımsız değişken gerektirir, ancak 1 değişen sayıda bağımsız değişkenin türü 'size_t'
+  galsignal.c
+  galWord.c
+  hackrf-tr.c
+  motionType.c
+  readTestvectors.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\readTestvectors.c(397,22): warning C4267: '=': 'size_t' - 'long' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\readTestvectors.c(425,12): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\readTestvectors.c(405,2): warning C4102: 'endwhile': etiket başvurusu kaldırıldı
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\readTestvectors.c(479,28): warning C4267: 'işlev': 'size_t' - 'long' dönüşümü; veri kaybı olabilir
+  receiver.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\receiver.c(49,14): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+  satListType.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\satListType.c(198,42): warning C4244: 'başlatılıyor': 'double' - 'float' dönüşümü; veri kaybı olabilir
+  signalControl.c
+  uc_birim.c
+  updateThread.c
+  Kod üretiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 69 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun üretilmesi tamamlandı
+  gal_osnma_sim.vcxproj -> C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\x64\Release\gal_osnma_sim.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

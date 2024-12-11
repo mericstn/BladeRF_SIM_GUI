@@ -1,0 +1,48 @@
+﻿  gal_osnma_sim.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\receiver.h(28): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  conversion.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\conversion.c(288): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\conversion.c(292): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\conversion.c(296): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\conversion.c(373): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\conversion.c(377): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\conversion.c(381): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ephemgal.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\ephemgal.c(97): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\ephemgal.c(100): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\ephemgal.c(108): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\ephemgal.c(112): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  fifoBuffer.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\fifoBuffer.h(75): error C2057: expected constant expression
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\fifoBuffer.h(75): error C2466: cannot allocate an array of constant size 0
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\fifoBuffer.h(82): error C2057: expected constant expression
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\fifoBuffer.h(82): error C2466: cannot allocate an array of constant size 0
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\fifoBuffer.c(17): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  gal-sdr-sim.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\receiver.h(28): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  galsignal.c
+  galWord.c
+  hackrf-tr.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\hackrf-tr.c(8): fatal error C1083: Cannot open include file: 'outputConf.h': No such file or directory
+  motionType.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\motionType.c(42): warning C4028: formal parameter 2 different from declaration
+  readTestvectors.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\receiver.h(28): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  receiver.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\receiver.h(28): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  satListType.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\receiver.h(28): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  signalControl.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(23): error C2061: syntax error: identifier 'WINAPI'
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(23): error C2059: syntax error: ';'
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(25): error C2065: 'CTRL_C_EVENT': undeclared identifier
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(28): error C2065: 'TRUE': undeclared identifier
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(30): error C2065: 'FALSE': undeclared identifier
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(45): warning C4013: 'SetConsoleCtrlHandler' undefined; assuming extern returning int
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(45): error C2065: 'PHANDLER_ROUTINE': undeclared identifier
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(45): error C2146: syntax error: missing ')' before identifier 'sighandler'
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\signalControl.c(45): error C2059: syntax error: ')'
+  uc_birim.c
+  updateThread.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\include\receiver.h(28): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+  Generating Code...

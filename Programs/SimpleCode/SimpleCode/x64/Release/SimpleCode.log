@@ -1,0 +1,10 @@
+﻿  main.c
+C:\Users\PC_3740\Desktop\GYT_MericSetan_GuzDonemi_Staj\Calismalar\Blade_RF\gps_sim_visual_studio\SimpleCode\SimpleCode\main.c(1718): warning C4101: 'komut': unreferenced local variable
+  Generating code
+  1 of 39 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SimpleCode.vcxproj -> C:\Users\PC_3740\Desktop\GYT_MericSetan_GuzDonemi_Staj\Calismalar\Blade_RF\gps_sim_visual_studio\SimpleCode\x64\Release\SimpleCode.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

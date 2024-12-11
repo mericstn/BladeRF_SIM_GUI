@@ -1,0 +1,33 @@
+﻿  gal_osnma_sim.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\include\receiver.h(28,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  conversion.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(289,20): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(293,21): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(297,13): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(374,20): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(378,21): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\conversion.c(382,13): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+  ephemgal.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(97,35): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(100,21): warning C4244: '=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(108,30): warning C4244: '-=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\ephemgal.c(112,30): warning C4244: '+=': 'double' - 'int' dönüşümü; veri kaybı olabilir
+  fifoBuffer.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\src\fifoBuffer.c(17,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  gal-sdr-sim.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\include\receiver.h(28,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  galsignal.c
+  galWord.c
+  hackrf-tr.c
+  motionType.c
+  readTestvectors.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\include\receiver.h(28,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  receiver.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\include\receiver.h(28,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  satListType.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\include\receiver.h(28,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  signalControl.c
+  uc_birim.c
+  updateThread.c
+C:\Users\PC_N_1066\Desktop\bladeRF_GUI_v1\Programs\gal_osnma_sim\include\receiver.h(28,10): error C1083: içerme dosyası açılamıyor: 'pthread.h': No such file or directory
+  Kod Üretiliyor...

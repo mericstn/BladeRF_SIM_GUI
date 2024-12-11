@@ -1,0 +1,11 @@
+﻿  gal-sdr-sim.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(141): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(192): warning C4101: 'toe_utc': unreferenced local variable
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(192): warning C4101: 'toc_utc': unreferenced local variable
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(309): warning C4028: formal parameter 1 different from declaration
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(436): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+  C:\Users\PC_3740\source\repos\gal_osnma_sim\src\gal-sdr-sim.c(436): note: consider using '%zd' in the format string
+  gal_osnma_sim.vcxproj -> C:\Users\PC_3740\source\repos\gal_osnma_sim\x64\Debug\gal_osnma_sim.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
