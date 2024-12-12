@@ -17,118 +17,7 @@
 
 
 
-int readNmeaGGA(double xyz[USER_MOTION_SIZE][3], const char* filename)
-{
-	FILE* fp;
-	int numd = 0;
-	char str[MAX_CHAR];
-	char* token;
-	double llh[3], pos[3];
-	char tmp[8];
 
-	if (NULL == (fp = fopen(filename, "rt")))
-		return(-1);
-
-	while (1)
-	{
-		if (fgets(str, MAX_CHAR, fp) == NULL)
-			break;
-
-		token = strtok(str, ",");
-
-		if (strncmp(token + 3, "GGA", 3) == 0)
-		{
-			token = strtok(NULL, ","); // Date and time
-
-			token = strtok(NULL, ","); // Latitude
-			strncpy(tmp, token, 2);
-			tmp[2] = 0;
-
-			llh[0] = atof(tmp) + atof(token + 2) / 60.0;
-
-			token = strtok(NULL, ","); // North or south
-			if (token[0] == 'S')
-				llh[0] *= -1.0;
-
-			llh[0] /= R2D; // in radian
-
-			token = strtok(NULL, ","); // Longitude
-			strncpy(tmp, token, 3);
-			tmp[3] = 0;
-
-			llh[1] = atof(tmp) + atof(token + 3) / 60.0;
-
-			token = strtok(NULL, ","); // East or west
-			if (token[0] == 'W')
-				llh[1] *= -1.0;
-
-			llh[1] /= R2D; // in radian
-
-			token = strtok(NULL, ","); // GPS fix
-			token = strtok(NULL, ","); // Number of satellites
-			token = strtok(NULL, ","); // HDOP
-
-			token = strtok(NULL, ","); // Altitude above meas sea level
-
-			llh[2] = atof(token);
-
-			token = strtok(NULL, ","); // in meter
-
-			token = strtok(NULL, ","); // Geoid height above WGS84 ellipsoid
-
-			llh[2] += atof(token);
-
-			// Convert geodetic position into ECEF coordinates
-			llh2xyz(llh, pos);
-
-			xyz[numd][0] = pos[0];
-			xyz[numd][1] = pos[1];
-			xyz[numd][2] = pos[2];
-
-			// Update the number of track points
-			numd++;
-
-			if (numd >= USER_MOTION_SIZE)
-				break;
-		}
-	}
-
-	fclose(fp);
-
-	return (numd);
-}
-/*! \brief Read the list of user motions from the input file
- *  \param[out] xyz Output array of ECEF vectors for user motion
- *  \param[[in] filename File name of the text input file
- *  \returns Number of user data motion records read, -1 on error
- */
-int readUserMotion(double xyz[USER_MOTION_SIZE][3], const char* filename)
-{
-	FILE* fp;
-	int numd;
-	char str[MAX_CHAR];
-	double t, x, y, z;
-
-	if (NULL == (fp = fopen(filename, "rt")))
-		return(-1);
-
-	for (numd = 0; numd < USER_MOTION_SIZE; numd++)
-	{
-		if (fgets(str, MAX_CHAR, fp) == NULL)
-			break;
-
-		if (EOF == sscanf(str, "%lf,%lf,%lf,%lf", &t, &x, &y, &z)) // Read CSV line
-			break;
-
-		xyz[numd][0] = x;
-		xyz[numd][1] = y;
-		xyz[numd][2] = z;
-	}
-
-	fclose(fp);
-
-	return (numd);
-}
 
 /*****************************************************************************
    Global variable
@@ -181,19 +70,53 @@ void usage(void) {
 			"Copyright \u00A9 2023 FDC\n\n");
     return;
 }
+/*! \brief Read the list of user motions from the input file
+ *  \param[out] xyz Output array of ECEF vectors for user motion
+ *  \param[[in] filename File name of the text input file
+ *  \returns Number of user data motion records read, -1 on error
+ */
+int readUserMotion(double xyz[KULLANICI_HAREKET_BOYUTU][3], const char* filename)
+{
+	FILE* fp;
+	int numd;
+	char str[MAX_CHAR];
+	double t, x, y, z;
 
+	if (NULL == (fp = fopen(filename, "rt")))
+		return(-1);
+
+	for (numd = 0; numd < KULLANICI_HAREKET_BOYUTU; numd++)
+	{
+		if (fgets(str, MAX_CHAR, fp) == NULL)
+			break;
+
+		if (EOF == sscanf(str, "%lf,%lf,%lf,%lf", &t, &x, &y, &z)) // Read CSV line
+			break;
+
+		xyz[numd][0] = x;
+		xyz[numd][1] = y;
+		xyz[numd][2] = z;
+	}
+
+	fclose(fp);
+
+	return (numd);
+}
 
 void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver, outputConf_t* outputConf) {
 
 	receiverINIT(receiver);
     ecef_t p0 = {0, 0, 0};
-    char testvectPath[MAX_CHAR] = {0};
-    char outfile[MAX_CHAR] = {0};
-	char umfile[MAX_CHAR] = { 0 };
+    char testvectPath[MAX_CHAR]  = {0};
+    char outfile[MAX_CHAR]		 = {0};
+	char umfile[MAX_CHAR]		 = {0}; //**********************
+	double xyz[KULLANICI_HAREKET_BOYUTU][3]; //*********************
+
+
 //    int timeoverwrite = false; // Overwrite the TOC and TOE in the RINEX file
     double llh[3] = {48.8435155,2.4297700,60};
     // Default options
-    outputConf->samp_freq = 2.6e6; 
+    outputConf->samp_freq = 2.6e6;
     outputConf->format = SC16;
     outputConf->dataType = IQ_dataType;
 
@@ -202,22 +125,55 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
         exit(1);
     }
     int result;
-	int numd;
+
     initInteruptionSignal();
-    while ((result = komut_getir(argc, argv, "b:l:o:s:g:i:d:hkv:")) != -1) {
+    while ((result = komut_getir(argc, argv, "b:l:o:s:u:i:d:hkv:")) != -1) {
         switch (result) {
             case 'v':
 				sprintf(testvectPath, "%s",opsiyon_argumani);
 				break;
             case 'l':
+
+				sscanf(opsiyon_argumani, "%lf,%lf,%lf", &llh[0], &llh[1], &llh[2]);
+				llh[0] = llh[0] / R2D;	// convert to RAD
+				llh[1] = llh[1] / R2D;	// convert to RAD
+				llh2xyz(llh, p0);		// Convert llh to xyz
+
+
 				receiver->type = STATIC;
-                sscanf(opsiyon_argumani, "%lf,%lf,%lf", &llh[0], &llh[1], &llh[2]);
-				llh2xyz(llh, xyz[0]); 
+				receiver->mt->numd = 1;
+				free(receiver->mt->pList);
+				free(receiver->mt->tList);
+				receiver->mt->tList = NULL;
+				receiver->mt->pList = (ecef_t*)malloc(sizeof(ecef_t));
+				ecefCp(receiver->mt->pList[0], p0);
+
                 break;
-			case 'g':
-				receiver->type = DYNAMIC;
-				strcpy(umfile, opsiyon_argumani);
-				break;
+			case 'u'://****************
+				
+				strcpy(umfile, opsiyon_argumani);  // Kullanýcý dosya adýný kopyala
+
+				receiver->type = DYNAMIC;							// Hareket tipi dinamik olarak ayarlanýr
+				receiver->mt->numd = readUserMotion(xyz, umfile);	// Kullanýcý hareket verilerini oku
+
+				free(receiver->mt->pList);
+				free(receiver->mt->tList);
+			
+				receiver->mt->pList = (ecef_t*)malloc(receiver->mt->numd * sizeof(ecef_t));
+				receiver->mt->tList = (double*)malloc(receiver->mt->numd * sizeof(double));
+
+				if (receiver->mt->pList == NULL || receiver->mt->tList == NULL) {
+					fprintf(stderr, "Memory allocation failed for motion lists.\n");
+					exit(EXIT_FAILURE);
+				}
+
+				for (int i = 0; i < receiver->mt->numd; i++) {
+					ecefCp(receiver->mt->pList[i], xyz[i]); // Pozisyon kopyala
+					receiver->mt->tList[i] = i * DELTA_T;  // Zaman kopyala
+				}
+				printf("dinamik mod kullaniliyor  !!! \n ");
+
+				break;			
             case 'o':
             	sprintf(outfile, "%s", opsiyon_argumani);
                 break;
@@ -270,7 +226,7 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
                 break;
         }
     }
-	/*-----------------------------Kontroller--------------------------------------*/
+
     /* Test option -v test vectors is set */
     if ( testvectPath[0] != 0)
     {
@@ -291,57 +247,13 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
     	exit(1);
     }
 
+    /* Set receiver position */
+    printf("Replay position:\tlat:%lf lon:%lf alt:%.2lf\n", llh[0], llh[1], llh[2]);
+   
 
-	// Dinamik konum verilmemiþse 
-	if (umfile[0] == 0 && receiver->type ==DYNAMIC)
-	{
-		// Default static location; Tokyo
-		receiver->type == STATIC;
-		llh[0] = 35.681298 / R2D;
-		llh[1] = 139.766247 / R2D;
-		llh[2] = 10.0;
-	}
+    receiverUpdate(receiver);
+	
 
-	if (receiver->tmax < 0.0 || (receiver->tmax > ((double)USER_MOTION_SIZE) / 10.0 && receiver->type == DYNAMIC) || (receiver->tmax > STATIC_MAX_DURATION && receiver->type == STATIC))
-	{
-		fprintf(stderr, "ERROR: Invalid duration.\n");
-		exit(1);
-	}
-	/*-------------------------------------------------------------------------------------------*/
-
-	if (receiver->type == DYNAMIC)
-	{
-		 //receiver->numd = readNmeaGGA(xyz, umfile);
-
-		 receiver->numd = readUserMotion(xyz, umfile);
-
-		if (receiver->numd == -1)
-		{
-			fprintf(stderr, "ERROR: Failed to open user motion / NMEA GGA file.\n");
-			exit(1);
-		}
-		else if (receiver->numd == 0)
-		{
-			fprintf(stderr, "ERROR: Failed to read user motion / NMEA GGA data.\n");
-			exit(1);
-		}
-
-		//// Set simulation duration
-		//if (numd > )
-		//	numd = iduration;
-
-		// Set user initial position
-		xyz2llh(xyz[0], llh);
-		/*for (int i = 0; i < 600; i++)
-		{
-			printf(" x: %f  y: %f  z: %f  \n", xyz[i][0], xyz[i][1], xyz[i][2]);
-		}*/
-		
-	}
-	else 
-	{
-		llh2xyz(llh, xyz[0]); 
-	}
 
 
 	satData->neph = readTestvectToEph(satData->eph, satData->testvectFile, &receiver->gal0, &receiver->tmax);
@@ -350,7 +262,8 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
 		ephemgal_t eph = satData->eph[i];
 		datetime_t toc_utc, toe_utc;
 
-		/*printf("\n--- Ephemeris Data for Satellite ID: %d ---\n", eph.svId);
+		/*
+		printf("\n--- Ephemeris Data for Satellite ID: %d ---\n", eph.svId);
 		printf("Valid Flag (vflg): %d\n", eph.vflg);
 
 		printf("TOC (Time of Clock):\n");
@@ -388,7 +301,6 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
 		printf("OmegaKDot: %.8e radians/sec\n", eph.omgkdot);
 		printf("------------------------------------------\n");*/
 	}
-
 	printf("Galileo start Time:\twn:%4d, tow:%.0f\n %d adet \n", receiver->gal0.wn, receiver->gal0.tow,satData->neph);
 	printf("Replay duration:\t%d s\n", receiver->tmax);
 
@@ -397,13 +309,11 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
         printf("Error no sat in testvector file.\n");
         exit(1);
     }
-	else
-	{
-		if ( verbose)
-		{
-			printEph(satData->eph);
-		}
-	}
+
+
+
+
+
 
 
     ////////////////////////////////////////////////////////////
@@ -445,6 +355,10 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
 
     printf("sample rate = %lf\n", outputConf->samp_freq);
 
+#ifdef HACKRFLINKED
+    outputConf->hackrf.sample_rate_hz = outputConf->samp_freq;
+#endif
+
 }
 
 void genSampl(const outputConf_t outputConf, struct satList_t* sat) {
@@ -456,7 +370,7 @@ void genSampl(const outputConf_t outputConf, struct satList_t* sat) {
 
         int i_acc = 0;
         int q_acc = 0;
-
+        pthread_mutex_lock(&sat->listLock);
 
         for (int isat = 0; isat < sat->n; isat++) {
             channel_t* chan = sat->list[isat];
@@ -516,7 +430,7 @@ void genSampl(const outputConf_t outputConf, struct satList_t* sat) {
             chan->carr_phase -= (long) chan->carr_phase; // (carr_phase %1)
             }
 
-        
+        pthread_mutex_unlock(&sat->listLock);
         
 		// Store I/Q samples into buffer
 		outputConf.iq_buff[length] = (short) (i_acc * agc_gain_nsat[sat->n] );

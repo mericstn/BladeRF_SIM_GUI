@@ -29,7 +29,8 @@ void* upDateFrame(void* arg) {
     satData_t* satData = a->satData;
     receiver_t* receiver = a->receiver;
     while (!signalExit()) {
-
+        pthread_mutex_lock(&sat->listLock);
+        pthread_cond_wait(&sat->newFrame, &sat->listLock);
 
 		// printf("sat->updateCmpt %d satData->iodCmpt %d\n",sat->updateCmpt, satData->iodCmpt);
 		if (sat->updateCmpt <= 0) {
@@ -39,15 +40,14 @@ void* upDateFrame(void* arg) {
 #endif
 			// update sat list
 			// printf("sat update\n");
-			// bakýolacak
-			//updateSatList(sat, *satData, receiver, 0);
+			updateSatList(sat, *satData, receiver, 0);
 		}
 
         for (int isat = 0; isat < sat->n; isat++) {			
             channel_t* chan = sat->list[isat];
             if (chan != NULL) {
                 if (chan->eph == NULL) { // chan not initalise
-                    initChan(chan, satData, receiver,xyz[0]);
+                    initChan(chan, satData, receiver);
                 }
                 if (chan->Nframe == NULL) {
                     sat->updateCmpt -= 2;
@@ -58,14 +58,48 @@ void* upDateFrame(void* arg) {
             }
         }
 
+        pthread_cond_signal(&sat->frameUpdated);
+        pthread_mutex_unlock(&sat->listLock);
 
     }
     return NULL;
 }
 
 
+pthread_t _upDateFrame_th;
+pthread_cond_t* _FrameUnlock;
+pthread_cond_t* _FrameUpdated;
+struct upDateFeameArg_t arg;
 
 
+void creatUpDateFrameThead(satList_t* sat, satData_t* satData, receiver_t* receiver){
+    arg.sat = sat;
+    arg.satData = satData;
+    arg.receiver = receiver;
 
+    pthread_create(&_upDateFrame_th, NULL, upDateFrame, (void*) &arg);
+            
+    _FrameUnlock = &sat->newFrame;
+    _FrameUpdated = &sat->frameUpdated;
+}
 
+void joinUpDateFrameThead(){
+    
+    if(!signalExit()){
+        quit();
+    }
+    pthread_cond_signal(_FrameUnlock); // signal to unlock thread
+    pthread_join(_upDateFrame_th, NULL);
+}
+
+void unlockUpDateFrameThread(){
+    pthread_cond_signal(_FrameUnlock);
+}
+
+void waitUpDateFrameThread(){
+    pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+    pthread_mutex_lock(&lock);
+    pthread_cond_wait(_FrameUpdated,&lock);
+    pthread_mutex_unlock(&lock);
+}
 

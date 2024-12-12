@@ -111,7 +111,7 @@ namespace bladeRF_GUI_v1.HelpersForms
                         return;
                     }
 
-                    // Komut oluşturma
+                    // Komut oluşturma //  cift destek in to do
                     commandBuilder.Append($"tx config file={_sim_cfg.galileo_cikti_klasor_yolu}\\{_sim_cfg.sim_csv_cikti_dosya_adi} format={format} repeat={_sim_cfg.bladerf_tekrar} channel=1,2;");
                    
                 }
@@ -127,11 +127,13 @@ namespace bladeRF_GUI_v1.HelpersForms
                     commandBuilder.Append($"tx config file={_sim_cfg.galileo_cikti_klasor_yolu}\\{_sim_cfg.galileo_cikti_dosya_adi} format=bin repeat={_sim_cfg.bladerf_tekrar} channel=1;");
                 }
             }
+
+
             else // bladeRF v1
             {
                 if (_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
                 {
-                    MessageBox.Show("Geçersiz cihaz modeli seçildi! 2 uydu yayını için 2 kanallı bir cihaz gerekmektedir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Geçersiz cihaz modeli seçildi! 2 uydu yayını için 2 kanallı bir cihaz gerekmektedir!\n Tek kanalda varsayılan TX1 çıkışı kullanılır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (_sim_cfg.gps_aktif && !_sim_cfg.galileo_aktif)
                 {
@@ -148,12 +150,10 @@ namespace bladeRF_GUI_v1.HelpersForms
             commandBuilder.Append($"tx start;");
             commandBuilder.Append($"tx wait;");
 
-            // Komutları string olarak al
             string allCommands = commandBuilder.ToString();
 
             Console.WriteLine(allCommands);
 
-            // CLI komutlarını çalıştırma
             var (result, arguments) = await _sim_cfg.CLI_isleyici_statik(allCommands, "", "",process);
             cikti_yaz(arguments, result);
 

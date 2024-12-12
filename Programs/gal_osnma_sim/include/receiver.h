@@ -25,7 +25,7 @@
 
 #ifndef RECEIVER_H
 #define RECEIVER_H
-
+#include <pthread.h>
 #include <stdio.h>
 #include "timeType.h"
 #include "motionType.h"
@@ -46,7 +46,7 @@ enum receiverUpdateReturn {
  * @see receiver.h
  */
 typedef struct receiver_s{
-  
+    pthread_mutex_t lock; 
     int numd;   /**< numbre of postition*/
     int tmax;   /**< duration of transmition*/
     ecef_t currentPosition; /**<@brief current receiver position. 

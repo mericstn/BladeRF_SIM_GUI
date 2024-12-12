@@ -49,7 +49,7 @@ namespace bladeRF_GUI_v1.HelpersForms
 
             galileo_vector_dosya_yolu       = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Inputs", "GalileoBroadcasts","13_DEC_2020_GST_09_00_01_fixed.csv"));
             galileo_cikti_klasor_yolu       = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Outputs"));
-            galileo_cli_dosya_yolu          = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "gal_osnma_sim_dinamik", "x64", "Debug", "gal_osnma_sim_dinamik.exe"));
+            galileo_cli_dosya_yolu          = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "gal_osnma_sim", "x64", "Debug", "gal_osnma_sim.exe"));
 
             bladerf_cli_dosya_yolu          = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "bladeRF", "x64", "bladeRF-cli.exe"));
             bladerf_script_dosya_yolu       = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Outputs", "command.script"));
@@ -119,7 +119,7 @@ namespace bladeRF_GUI_v1.HelpersForms
             if (this.sim_statik_konum_modu)
                 galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -l {this.sim_llh} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi} -i {iyono} -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} ";
             else
-                galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -g {this.sim_kullanici_hareketi_dosya_yolu} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi} -i {iyono} -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} ";
+                galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -u {this.sim_kullanici_hareketi_dosya_yolu} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi} -i {iyono} -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} ";
 
             return galileo_komut;
         }

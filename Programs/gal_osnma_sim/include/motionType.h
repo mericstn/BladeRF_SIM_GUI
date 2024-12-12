@@ -38,7 +38,7 @@
  */
 typedef enum motionType_t{
     STATIC, ///<@brief static possition 
-	DYNAMIC,
+	DYNAMIC
 }motionType_t;
 
 /** @brief structur contain list of receiver position.
@@ -77,7 +77,7 @@ motionStr_t* motionTypeInit();
  * @param[in] mt motionStr_t
  */
 
-void getPos(double * xyz, const double tx, const motionStr_t* mt);
+void getPos(ecef_t pos, const double tx, const motionStr_t* mt);
 
 /**
  * @brief configure motionStr_t as Static location

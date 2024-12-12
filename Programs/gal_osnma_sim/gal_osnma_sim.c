@@ -11,127 +11,81 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-
-
 int main(int argc, char* argv[]) {
 
-	satData_t satData		= INIT_SATDATA_T; // Galileo Constellation data
-	receiver_t receiver		= { 0 };   // receiver status
+	satData_t satData = INIT_SATDATA_T; // Galileo Constellation data
+	receiver_t receiver = { 0 };   // receiver status
 	outputConf_t outputConf = INIT_OUTPUT_CONF; // output data configuration
-	satList_t sat; // list of active channel
+	satList_t sat = INIT_CHANLIST_T; // list of active channel
 
+	readOption(argc, argv, &satData, &receiver, &outputConf);
 
-
-	readOption(argc, argv, &satData, &receiver, &outputConf); /*////////////////////////////*/
-
-
-	printf("\nInitialized satellites in view:");
-	initSatList(&satData, &receiver, &sat,&xyz[0]);/*////////////////////////////*/
-
-	//void* upDateFrame(void* arg)
-
-	galileotime_t galtime = getTime(receiver);
-
-	readTestvectToEph(satData.eph, satData.testvectFile, &galtime, &receiver.tmax);
-
-
-	// update sat list
-	printf("sat update\n");
-	updateSatList(&sat, satData, &receiver, 0,&xyz[0]); /*////////////////////////////*/
-	
-
-	for (int isat = 0; isat < sat.n; isat++) {
-
-
-		channel_t* chan = sat.list[isat];
-
-		if (chan != NULL) {
-
-			if (chan->eph == NULL) { 
-				initChan(chan, &satData, &receiver,&xyz[0]);
-			}
-
-			if (chan->Nframe == NULL) {
-				sat.updateCmpt -= 2;
-				chan->Nframe = genNavData(&satData, chan);
-		
-			}
+#ifdef HACKRFLINKED
+	// start hackRF
+	if (outputConf.hackrf.hackrf_transfer) {
+		if (initHackrf(outputConf.hackrf) == EXIT_FAILURE) {
+			printf("HackRF init failed\n");
+			return EXIT_FAILURE;
 		}
 	}
-	
+#endif
+	// init satList
+	printf("\nInitialized satellites in view:");
+
+	initSatList(&satData, &receiver, &sat);
+
+	/**
+	 * @defgroup upDateThread nav data thread
+	 * secondary thread update update navigation data régulary
+	 * @see newPage()
+	 *
+	 */
+	creatUpDateFrameThead(&sat, &satData, &receiver);
+
+
+
 	printf("Nb Sat in view %i\n", sat.n);
 
 
 	// Initial reception time
 	clock_t tstart = clock(); // system time
 
-	for (int iumd = 1; iumd < receiver.numd; iumd++)
-	{
-		/*while (!signalExit() && (receiver.txtime * DELTA_T < receiver.tmax)) {*/
+	/** @defgroup main_loop main programe loop
+	 * main programe loop.
+	 * generat sample for @ref DELTA_T second & update receiver receiver satellite position evrey time
+	 *
+	 * loop stop when signalExit() is true @ref  signalControle.h
+	 */
+	 /// @addtogroup main_loop
+	 /// @code
 
-
-			for (int i = 0; i < sat.n; i++) {
-				updateChan(sat.list[i], &receiver);
-			}
-
-			genSampl(outputConf, &sat);
-
-			printf("\rTime = %4.1f", receiver.txtime * DELTA_T);
-
-
-			for (int isat = 0; isat < sat.n; isat++) {
-
-
-				if (sat.list[isat] != NULL) {
-
-					if (sat.list[isat]->eph == NULL) {
-						printf("-----------------------------------------------------------------------------------------------");
-						
-						initChan(sat.list[isat], &satData, &receiver, xyz[iumd]);
-					}
-
-					if (sat.list[isat]->Nframe == NULL) {
-						printf("------****************************************************************---\n");
-						sat.updateCmpt -= 2;
-						sat.list[isat]->Nframe = genNavData(&satData, sat.list[isat]);
-
-					}
-				}
-			}
-
-			printf("Nb Sat in view %i\n", sat.n);
-			fflush(stdout);
-			
-
-
-			printf(" \n iumd  = %d  \n", iumd);
-
-			if ((int)(receiver.txtime * DELTA_T * 10) % 300 == 0)
-			{
-				printf("\t eph update\n");
-				readTestvectToEph(satData.eph, satData.testvectFile, &galtime, &receiver.tmax);
-
-				if (receiver.type == DYNAMIC)
-				{
-					updateSatList(&sat, satData, &receiver, 1, xyz[iumd]);
-
-				}
-				else
-				{
-					updateSatList(&sat, satData, &receiver, 0, xyz[0]);
-				}
-			}
-
-			if (receiver.txtime * DELTA_T == receiver.tmax)
-				break;
-			receiver.txtime++;
-		//}
+	while (!signalExit()) {
+		//    while (!signalExit() && (receiver.txtime * DELTA_T < 720)) {
+				// Update receiver time
+		if (receiverUpdate(&receiver) != RECEIVER_UPDATED) {
+			break; // stop programe if receiverUpdate() return erreur
+		}
+		// update satList
+		pthread_mutex_lock(&sat.listLock);
+		for (int i = 0; i < sat.n; i++) {
+			updateChan(sat.list[i], &receiver);
+		}
+		pthread_mutex_unlock(&sat.listLock);
+		// make sample
+		genSampl(outputConf, &sat);
+		// print time
+		printf("\rTime = %4.1f", receiver.txtime * DELTA_T);
+		fflush(stdout);
+		//      if(receiver.txtime * DELTA_T == 0.2)
+		//      	break;
 	}
-	
+
+	/// @endcode
 
 	clock_t tend = clock();
 
+	//close up date Frame thread
+	joinUpDateFrameThead();
 
 	printf("\nDone!\n");
 
@@ -145,6 +99,11 @@ int main(int argc, char* argv[]) {
 	{
 		fclose(satData.testvectFile);
 	}
+
+#ifdef HACKRFLINKED
+	// Close Hackrf
+	closeHackrf();
+#endif
 
 	// Process time
 	printf("Process time = %.3f[sec]\n", (double)(tend - tstart) / CLOCKS_PER_SEC);

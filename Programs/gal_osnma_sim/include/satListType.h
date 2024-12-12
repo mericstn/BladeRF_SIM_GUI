@@ -14,7 +14,7 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 #include "receiver.h"
-
+#include <pthread.h>
 #include "timeType.h"
 #include "satDataType.h"
 #include "galWord.h"
@@ -38,7 +38,9 @@ typedef struct channel_s {
     ephemgal_t* eph;                    ///< pointer to ephemirs 
     galileotime_t g;
     double r;
-
+    pthread_cond_t* newFrame;           ///< point to satList.newFrame
+    pthread_cond_t* frameUpdated;       ///< point to satList.frameUpdated
+    pthread_mutex_t* listLock;          ///< point to satList.listLock
 }channel_t;
 
 
@@ -61,7 +63,9 @@ typedef struct satList_t{
     int n;                      /**< \brief numbre of channel used*/
     int updateCmpt;              /**< \brief update compter. satList while be update when compteur egale to 0 */
 	int updatesatlist_time;
-
+    pthread_mutex_t listLock;   /**< \brief mutex */
+    pthread_cond_t newFrame;    /**< \brief set when channel require a new frame*/
+    pthread_cond_t frameUpdated;/**< @brief send when new frame is creat*/
 }satList_t;
 
 
@@ -82,7 +86,7 @@ void newPage(channel_t* chan);
  * @param receiver
  * @param sat
  */
-void initSatList(satData_t* satData, receiver_t* receiver, satList_t* sat, double* xyz);
+void initSatList(satData_t* satData, receiver_t* receiver, satList_t* sat);
 
 /**
  * @brief update range and speed between satellite and receiver
@@ -99,7 +103,7 @@ void updateChan( channel_t* chan, receiver_t* receiver);
  * @param satData
  * @param receiver
  */
-void updateSatList(satList_t* sat, satData_t satData, receiver_t* receiver, int print,double *xyz); 
+void updateSatList(satList_t* sat, satData_t satData, receiver_t* receiver, int print); 
 
 
 /**@brief generation navigation data word for one channel
@@ -111,6 +115,6 @@ void updateSatList(satList_t* sat, satData_t satData, receiver_t* receiver, int 
  */
 int* genNavData(satData_t* satData, channel_t* sat);
 
-void initChan(channel_t* chan,  satData_t* satData, const receiver_t* receiver , double* xyz);
+void initChan(channel_t* chan,  satData_t* satData, const receiver_t* receiver);
 
 #endif /* CHANNEL_H */

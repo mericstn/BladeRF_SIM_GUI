@@ -14,7 +14,7 @@
 #include "../include/timeType.h"
 
 receiver_t* receiverINIT(receiver_t* receiver){
-
+    pthread_mutex_init(&receiver->lock, NULL);
     receiver->gal0 = INIT_GALILEOTIME_T;
     receiver->numd=0;
     receiver->tmax=0;
@@ -23,6 +23,36 @@ receiver_t* receiverINIT(receiver_t* receiver){
          receiver->mt=motionTypeInit();
     
     return receiver;
+}
+
+void getPos_n(ecef_t pos, double tx, const motionStr_t* mt) {
+	// Eðer sadece bir pozisyon varsa, sabit olarak döner
+	if (mt->numd == 1) {
+		ecefCp(pos, mt->pList[0]);
+		return;
+	}
+
+	// Zaman aralýðýný kontrol et
+	for (int i = 0; i < mt->numd - 1; i++) {
+		double t1 = mt->tList[i];
+		double t2 = mt->tList[i + 1];
+		if (tx >= t1 && tx <= t2) {
+			// Lineer interpolasyon yap
+			double alpha = (tx - t1) / (t2 - t1);
+			for (int j = 0; j < 3; j++) {
+				pos[j] = mt->pList[i][j] + alpha * (mt->pList[i + 1][j] - mt->pList[i][j]);
+			}
+			return;
+		}
+	}
+
+	// Eðer tx, tList'in aralýðýnda deðilse, en yakýn deðeri döner
+	if (tx < mt->tList[0]) {
+		ecefCp(pos, mt->pList[0]);
+	}
+	else {
+		ecefCp(pos, mt->pList[mt->numd - 1]);
+	}
 }
 
 enum receiverUpdateReturn receiverUpdate(receiver_t* receiver){
@@ -34,10 +64,9 @@ enum receiverUpdateReturn receiverUpdate(receiver_t* receiver){
 
 
     double tx =receiver->txtime*DELTA_T;
-    //getPos(xyz, tx, receiver->mt);
-#if PRINT_POS
-    printf("x:%f,Y: %f, z:%f tx %lf\n",xyz[0], xyz[1], xyz[2],tx);
-#endif
+	getPos_n(receiver->currentPosition, tx, receiver->mt);
+    printf(" current ppose   x:%f,Y: %f, z:%f tx %lf\n",receiver->currentPosition[0], receiver->currentPosition[1], receiver->currentPosition[2],tx);
+
     return RECEIVER_UPDATED;
 }
 

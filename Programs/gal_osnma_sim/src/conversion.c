@@ -23,10 +23,10 @@
  *  \param[in] x2 Subtrahend of subtracion
  *  @note y=x1-x2
  */
-void subVect(double *y, const double *x1,  double* xyz) {
-    y[0] = x1[0] - xyz[0];
-    y[1] = x1[1] - xyz[1];
-    y[2] = x1[2] - xyz[2];
+void subVect(double *y, const double *x1, const double *x2) {
+    y[0] = x1[0] - x2[0];
+    y[1] = x1[1] - x2[1];
+    y[2] = x1[2] - x2[2];
 
     return;
 }
@@ -35,9 +35,15 @@ void subVect(double *y, const double *x1,  double* xyz) {
  *  \param[in] x Input vector
  *  \returns Length (Norm) of the input vector
  */
-double normVect(const double* x)
-{
-	return(sqrt(x[0] * x[0] + x[1] * x[1] + x[2] * x[2]));
+double normVect(const double *x) {
+    double norm = sqrt(x[0] * x[0] + x[1] * x[1] + x[2] * x[2]);
+#if TEST_NAN
+    if (norm!=norm){
+        printf("error NAN in normVect()%f\n %f,%f,%f",norm,x[0],x[1],x[2]);
+        exit(5);
+    }
+#endif
+    return norm;
 }
 
 /*! \brief Compute dot-product of two vectors
@@ -83,7 +89,7 @@ void neu2azel(double *azel, const double *neu) {
  *  \param[in] xyz Input Array of X, Y and Z ECEF coordinates
  *  \param[out] llh Output Array of Latitude, Longitude and Height
  */
-void xyz2llh( double *xyz, double *llh) {
+void xyz2llh(const double *xyz, double *llh) {
     double a, eps, e, e2;
     double x, y, z;
     double rho2, dz, zdz, nh, slat, n, dz_new;

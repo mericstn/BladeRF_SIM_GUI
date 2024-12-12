@@ -49,7 +49,23 @@
  * @param satData point to main satData_t struct
  * @param receiver point to main receiver_t struct
  */
-
+void creatUpDateFrameThead(satList_t* sat, satData_t* satData, receiver_t* receiver);
+/**
+ * @brief stop update Frame thread.
+ * @return when join thread completed
+ */
+void joinUpDateFrameThead();
+/**
+ * @brief unlock update Frame thread
+ * 
+ * send signal for unlock thread
+ */
+void unlockUpDateFrameThread();
+/**
+ * @brief wait an update thread completed
+ * @return when a the update fonction have been over
+ */
+void waitUpDateFrameThread();
 
 
 #endif /* UPDATETHREAD_H */

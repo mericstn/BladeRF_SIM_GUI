@@ -26,8 +26,8 @@
  *****************************************************************************/
 void iPageUpdate(channel_t* chan);
 
-int  satVisible( ephemgal_t eph, const receiver_t* receiver, int print,double*xyz);
-double computeRange(ephemgal_t eph, const receiver_t* receiver, double* xyz);
+int  satVisible( ephemgal_t eph, const receiver_t* receiver, int print);
+double computeRange(ephemgal_t eph, const receiver_t* receiver);
 channel_t* creatChannel(int sv, satList_t* sat);
 
 /*****************************************************************************
@@ -72,26 +72,31 @@ static inline void removeSat(satList_t* sat, int nsat) {
 
 
 void newPage(channel_t* chan){
-
+    while(chan->Nframe==NULL){
+        printf("nFrame= NULL\n"); 
+        waitUpDateFrameThread();
+    }
     free(chan->Cframe);
     chan->Cframe = chan->Nframe;
     chan->Nframe = NULL;
-
+    unlockUpDateFrameThread();
     
 }
 
 
-void updateSatList(satList_t* sat, satData_t satData, receiver_t* receiver, int print,double *xyz) { // xyz tek konum liste deil
+void updateSatList(satList_t* sat, satData_t satData, receiver_t* receiver, int print) {
     ephemgal_t* eph = satData.eph;
 
     int nsat = 0; // Number of visible satellites;   
+
+
 
     if (receiver->log != NULL) {
         fprintf(receiver->log, "tow:%f\n", getTime(*receiver).tow);
     }
 
     for (int sv = 0; sv < MAX_SAT; sv++) {
-        if (satVisible(eph[sv], receiver, print, xyz)) {
+        if (satVisible(eph[sv], receiver, print)) {
             while (sat->list[nsat] != NULL && sat->list[nsat]->svId < sv) { // list[nsat] not visible and should be remove
                 removeSat(sat, nsat);
             }
@@ -130,14 +135,15 @@ channel_t* creatChannel(int sv, satList_t* sat){
     chan->Cframe = NULL;
     chan->Nframe = NULL;
     chan->eph = NULL; // eph=NULL <=> chan not initialize
-
+    chan->newFrame=&sat->newFrame;
+    chan->frameUpdated = &sat->frameUpdated;
+    chan->listLock = &sat->listLock;
     
     return chan;
 }
 
 
-void initChan(channel_t* chan, struct satData_t* satData, const receiver_t* receiver,double *xyz){
-
+void initChan(channel_t* chan, struct satData_t* satData, const receiver_t* receiver){
     chan->eph = &satData->eph[chan->svId];
     
     //double ref[3] = {0.0};
@@ -146,9 +152,9 @@ void initChan(channel_t* chan, struct satData_t* satData, const receiver_t* rece
     double phase_init;
 
     
-    r_ref = computeRange(*chan->eph, &ref, xyz);
+    r_ref = computeRange(*chan->eph, &ref);
     
-    r_xyz = computeRange(*chan->eph, receiver, xyz);
+    r_xyz =computeRange(*chan->eph, receiver);
 
     
     phase_init = (2 * r_ref - r_xyz) / LAMBDA_L1;
@@ -192,9 +198,9 @@ void updateChan(channel_t* chan, receiver_t* receiver){
     float deltaT = getTime(*receiver).tow-chan->g.tow;
     if (deltaT>DELTA_T/100){
             // update range
-      
-         double range = computeRange(*chan->eph, receiver,xyz);
- 
+        pthread_mutex_lock(&receiver->lock);
+            double range = computeRange(*chan->eph, receiver);
+       pthread_mutex_unlock(&receiver->lock);
             // Pseudorange rate
     
     double rhorate = (range - chan->r) / deltaT;
@@ -277,17 +283,14 @@ void iPageUpdate(channel_t* chan){
  * @return true if sat is visible
  */
 
-int satVisible( ephemgal_t eph, const receiver_t* receiver, int print,double *xyz){ // xyz konumdur
-
+int satVisible( ephemgal_t eph, const receiver_t* receiver, int print){
     double tmat[3][3]; //Intermediate matrix for ECEF to NEU conversion
     double azel[2]; //Azimuth and elevation
     double llh[3];
     int useSat=0;
-    //double * xyzition = xyz;
-    xyz2llh(xyz, llh); /// @todo enabled change position
+    //ecef_t position = receiver->currentPosition;
+    xyz2llh(receiver->currentPosition, llh); /// @todo enabled change position
     ltcmat(llh, tmat);
-
-
     if (eph.vflg == 1) {
         double los[3];
         double neu[3]; //North-East Up
@@ -296,25 +299,24 @@ int satVisible( ephemgal_t eph, const receiver_t* receiver, int print,double *xy
         
         galtime = getTime(*receiver);
         satpos(eph, galtime, pos, vel, clk);
-
-        subVect(los, pos, xyz);
-
+        subVect(los, pos, receiver->currentPosition);
         ecef2neu(los, tmat, neu);
         neu2azel(azel, neu);
-
+#if TEST_SAT>1
 		if ( print)
 		{
 			if ( azel[1] > SAT_MASK)
 			{
 				printf("\nsat: %02d az: %6.1f el: %5.1f wn:%d tow:%f", eph.svId+1, azel[0] * R2D, azel[1] * R2D,galtime.wn, galtime.tow);
-	        	//printf("GSV:%02d;%.0f;%.0f\n", eph.svId+301, azel[1] * R2D, azel[0] * R2D);
+	//        	printf("GSV:%02d;%.0f;%.0f\n", eph.svId+301, azel[1] * R2D, azel[0] * R2D);
 			}
 		}
-
+#if TEST_SAT>1 && LOGTEST
         if (receiver->log!=NULL){
         fprintf(receiver->log,"sat: %02d az: %6.1f el: %5.1f\n", eph.svId, azel[0] * R2D, azel[1] * R2D);
         }
-  
+#endif
+#endif  
         useSat=azel[1] > SAT_MASK;
         
     }
@@ -322,24 +324,28 @@ int satVisible( ephemgal_t eph, const receiver_t* receiver, int print,double *xy
 }
 
 
-void initSatList(satData_t* satData, receiver_t* receiver, satList_t* sat,double*xyz){
+void initSatList(satData_t* satData, receiver_t* receiver, satList_t* sat){
     sat->n = 0;
 	
 	/* The timing for updating eph struct differs in test vector */
 	sat->updatesatlist_time = UPDATE_SATLIST_TIME;
 	
+    pthread_mutex_init(&sat->listLock, NULL);
+    pthread_cond_init(&sat->newFrame, NULL);
+    pthread_cond_init(&sat->frameUpdated, NULL);
     for (int i = 0; i < MAX_CHAN; i++) {
         sat->list[i] = NULL;
     }
-
+    pthread_mutex_lock(&sat->listLock);
     
-    updateSatList(sat, (*satData), receiver, 1, xyz);
+    updateSatList(sat, (*satData), receiver, 1);
     
     // Initialize carrier phase
     for (int i = 0; i < sat->n; i++) {
-        initChan(sat->list[i], satData, receiver,xyz);
+        initChan(sat->list[i], satData, receiver);
     }
-
+    pthread_cond_signal(&sat->newFrame); // Initialize Nframe
+    pthread_mutex_unlock(&sat->listLock);
 }
 
 
@@ -385,8 +391,7 @@ int* genNavData(satData_t* satData, channel_t* sat){
  *  \param[in] eph Ephemeris data of the satellite
  *  \param[in] receiver struct (contains position and time)
  */
-double computeRange(const ephemgal_t eph, const receiver_t* receiver,double * xyz) {
-
+double computeRange(const ephemgal_t eph, const receiver_t* receiver) {
     double satPos[3], satVel[3], satClk[2];
     double los[3];
     double tau;
@@ -399,7 +404,7 @@ double computeRange(const ephemgal_t eph, const receiver_t* receiver,double * xy
     satpos(eph, galTime, satPos, satVel, satClk);
 
     // Receiver to satellite vector and light-time.
-    subVect(los, satPos, xyz);
+    subVect(los, satPos, receiver->currentPosition);
     tau = normVect(los) / SPEED_OF_LIGHT;
 
     // Extrapolate the satellite position backwards to the transmission time.
@@ -412,14 +417,14 @@ double computeRange(const ephemgal_t eph, const receiver_t* receiver,double * xy
     satPos[1] = satPos[1] - satPos[0] * OMEGA_EARTH*tau;
 
     // New observer to satellite vector and satellite range.
-    subVect(los, satPos, xyz);
+    subVect(los, satPos, receiver->currentPosition);
     range = normVect(los);
 
     // Pseudorange.
     //rho->range = range - SPEED_OF_LIGHT * satClk[0];
 
     // Relative velocity of SV and receiver.
-	// rate = dotProd(satVel, los) / range;
+//    rate = dotProd(satVel, los) / range;
 
 
     // Time of application
