@@ -72,10 +72,12 @@ enum receiverUpdateReturn receiverUpdate(receiver_t* receiver){
 
 
 galileotime_t getTime(receiver_t receiver){
+
     double dt = receiver.txtime*DELTA_T;
     double t =receiver.gal0.wn*SECONDS_IN_WEEK+ receiver.gal0.tow + dt;
     galileotime_t time={0,0};
     time.wn=t/SECONDS_IN_WEEK;
     time.tow=t-time.wn*SECONDS_IN_WEEK;
+
     return time;
 }

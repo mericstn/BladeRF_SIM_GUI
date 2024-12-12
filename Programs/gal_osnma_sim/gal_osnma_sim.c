@@ -20,15 +20,7 @@ int main(int argc, char* argv[]) {
 
 	readOption(argc, argv, &satData, &receiver, &outputConf);
 
-#ifdef HACKRFLINKED
-	// start hackRF
-	if (outputConf.hackrf.hackrf_transfer) {
-		if (initHackrf(outputConf.hackrf) == EXIT_FAILURE) {
-			printf("HackRF init failed\n");
-			return EXIT_FAILURE;
-		}
-	}
-#endif
+
 	// init satList
 	printf("\nInitialized satellites in view:");
 
@@ -50,14 +42,7 @@ int main(int argc, char* argv[]) {
 	// Initial reception time
 	clock_t tstart = clock(); // system time
 
-	/** @defgroup main_loop main programe loop
-	 * main programe loop.
-	 * generat sample for @ref DELTA_T second & update receiver receiver satellite position evrey time
-	 *
-	 * loop stop when signalExit() is true @ref  signalControle.h
-	 */
-	 /// @addtogroup main_loop
-	 /// @code
+
 
 	while (!signalExit()) {
 		//    while (!signalExit() && (receiver.txtime * DELTA_T < 720)) {
@@ -80,7 +65,6 @@ int main(int argc, char* argv[]) {
 		//      	break;
 	}
 
-	/// @endcode
 
 	clock_t tend = clock();
 
@@ -100,10 +84,7 @@ int main(int argc, char* argv[]) {
 		fclose(satData.testvectFile);
 	}
 
-#ifdef HACKRFLINKED
-	// Close Hackrf
-	closeHackrf();
-#endif
+
 
 	// Process time
 	printf("Process time = %.3f[sec]\n", (double)(tend - tstart) / CLOCKS_PER_SEC);

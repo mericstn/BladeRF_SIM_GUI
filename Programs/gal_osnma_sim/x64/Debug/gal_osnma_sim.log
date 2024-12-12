@@ -1,4 +1,5 @@
-﻿  gal-sdr-sim.c
+﻿  gal_osnma_sim.c
+  gal-sdr-sim.c
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(30): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(215): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(263): warning C4101: 'toe_utc': unreferenced local variable
@@ -7,8 +8,15 @@ C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sd
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(364): warning C4028: formal parameter 1 different from declaration
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(491): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
   C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(491): note: consider using '%zd' in the format string
-  receiver.c
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\receiver.c(78): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  readTestvectors.c
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(397): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(425): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(405): warning C4102: 'endwhile': unreferenced label
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(479): warning C4267: 'function': conversion from 'size_t' to 'long', possible loss of data
+  satListType.c
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\satListType.c(199): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\satListType.c(396): warning C4028: formal parameter 1 different from declaration
+  updateThread.c
   Generating Code...
   gal_osnma_sim.vcxproj -> C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\x64\Debug\gal_osnma_sim.exe
   'pwsh.exe' is not recognized as an internal or external command,

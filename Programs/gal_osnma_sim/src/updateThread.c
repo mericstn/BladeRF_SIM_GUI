@@ -24,23 +24,23 @@ struct upDateFeameArg_t {
  * @return NULL
  */
 void* upDateFrame(void* arg) {
+
     struct upDateFeameArg_t *a = (struct upDateFeameArg_t*) arg;
     satList_t* sat = a->sat;
     satData_t* satData = a->satData;
     receiver_t* receiver = a->receiver;
+
     while (!signalExit()) {
         pthread_mutex_lock(&sat->listLock);
         pthread_cond_wait(&sat->newFrame, &sat->listLock);
 
 		// printf("sat->updateCmpt %d satData->iodCmpt %d\n",sat->updateCmpt, satData->iodCmpt);
 		if (sat->updateCmpt <= 0) {
-#if UPDATE_EPH_TIME>0            
 			galileotime_t galtime = getTime(*receiver);
 			readTestvectToEph(satData->eph, satData->testvectFile, &galtime, &receiver->tmax);
-#endif
 			// update sat list
-			// printf("sat update\n");
-			updateSatList(sat, *satData, receiver, 0);
+			printf("sat update\n");
+			updateSatList(sat, *satData, receiver, 1);
 		}
 
         for (int isat = 0; isat < sat->n; isat++) {			
