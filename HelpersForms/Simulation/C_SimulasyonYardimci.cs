@@ -117,9 +117,9 @@ namespace bladeRF_GUI_v1.HelpersForms
 
             /*-------------------- galileo simulasyonunda statik konum modu var yalnızca. İleride ekmele yapılacak.*/
             if (this.sim_statik_konum_modu)
-                galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -l {this.sim_llh} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi} -i {iyono} -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} ";
+                galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -l {this.sim_llh} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi}  -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} -b 16";
             else
-                galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -u {this.sim_kullanici_hareketi_dosya_yolu} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi} -i {iyono} -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} ";
+                galileo_komut = $"-v {this.galileo_vector_dosya_yolu} -u {this.sim_kullanici_hareketi_dosya_yolu} -o {this.galileo_cikti_klasor_yolu}\\{this.galileo_cikti_dosya_adi} -d {this.sim_simulasyon_suresi}  -s {ParseValueWithUnit(this.sim_ornekleme_frekansi)} -b 16 ";
 
             return galileo_komut;
         }

@@ -52,6 +52,8 @@
             this.galileo_efemeris_yolu_label = new System.Windows.Forms.Label();
             this.galileo_iyonosferik_gecikme_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.ikili_cikti_dosya_adi_textbox = new System.Windows.Forms.TextBox();
+            this.llabel = new System.Windows.Forms.Label();
             this.sim_olustur_button = new System.Windows.Forms.Button();
             this.komut_bilgi_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,8 +82,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gps_iyonosferik_gecikme_checkbox = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.llabel = new System.Windows.Forms.Label();
-            this.ikili_cikti_dosya_adi_textbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -170,6 +170,7 @@
             // 
             this.galileo_iyonosferik_gecikme_checkbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.galileo_iyonosferik_gecikme_checkbox.AutoSize = true;
+            this.galileo_iyonosferik_gecikme_checkbox.Enabled = false;
             this.galileo_iyonosferik_gecikme_checkbox.Location = new System.Drawing.Point(357, 240);
             this.galileo_iyonosferik_gecikme_checkbox.Name = "galileo_iyonosferik_gecikme_checkbox";
             this.galileo_iyonosferik_gecikme_checkbox.Size = new System.Drawing.Size(15, 14);
@@ -181,6 +182,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
+            this.label8.Enabled = false;
             this.label8.Location = new System.Drawing.Point(32, 240);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 13);
@@ -383,6 +385,28 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(567, 105);
             this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // ikili_cikti_dosya_adi_textbox
+            // 
+            this.ikili_cikti_dosya_adi_textbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ikili_cikti_dosya_adi_textbox.Enabled = false;
+            this.ikili_cikti_dosya_adi_textbox.Location = new System.Drawing.Point(286, 16);
+            this.ikili_cikti_dosya_adi_textbox.Name = "ikili_cikti_dosya_adi_textbox";
+            this.ikili_cikti_dosya_adi_textbox.Size = new System.Drawing.Size(178, 20);
+            this.ikili_cikti_dosya_adi_textbox.TabIndex = 32;
+            this.ikili_cikti_dosya_adi_textbox.Text = "gpsgal.bin";
+            this.ikili_cikti_dosya_adi_textbox.TextChanged += new System.EventHandler(this.ikili_cikti_dosya_adi_textbox_TextChanged);
+            // 
+            // llabel
+            // 
+            this.llabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.llabel.AutoSize = true;
+            this.llabel.Enabled = false;
+            this.llabel.Location = new System.Drawing.Point(93, 19);
+            this.llabel.Name = "llabel";
+            this.llabel.Size = new System.Drawing.Size(96, 13);
+            this.llabel.TabIndex = 32;
+            this.llabel.Text = "İkili Çıktı Dosya Adı";
             // 
             // sim_olustur_button
             // 
@@ -699,28 +723,6 @@
             this.gps_iyonosferik_gecikme_checkbox.TabIndex = 26;
             this.gps_iyonosferik_gecikme_checkbox.UseVisualStyleBackColor = true;
             this.gps_iyonosferik_gecikme_checkbox.CheckedChanged += new System.EventHandler(this.Gps_iyonosferik_gecikme_checkbox_CheckedChanged);
-            // 
-            // llabel
-            // 
-            this.llabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.llabel.AutoSize = true;
-            this.llabel.Enabled = false;
-            this.llabel.Location = new System.Drawing.Point(93, 19);
-            this.llabel.Name = "llabel";
-            this.llabel.Size = new System.Drawing.Size(96, 13);
-            this.llabel.TabIndex = 32;
-            this.llabel.Text = "İkili Çıktı Dosya Adı";
-            // 
-            // ikili_cikti_dosya_adi_textbox
-            // 
-            this.ikili_cikti_dosya_adi_textbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ikili_cikti_dosya_adi_textbox.Enabled = false;
-            this.ikili_cikti_dosya_adi_textbox.Location = new System.Drawing.Point(286, 16);
-            this.ikili_cikti_dosya_adi_textbox.Name = "ikili_cikti_dosya_adi_textbox";
-            this.ikili_cikti_dosya_adi_textbox.Size = new System.Drawing.Size(178, 20);
-            this.ikili_cikti_dosya_adi_textbox.TabIndex = 32;
-            this.ikili_cikti_dosya_adi_textbox.Text = "gpsgal.bin";
-            this.ikili_cikti_dosya_adi_textbox.TextChanged += new System.EventHandler(this.ikili_cikti_dosya_adi_textbox_TextChanged);
             // 
             // UC_YuklemeEkrani
             // 
