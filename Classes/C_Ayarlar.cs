@@ -14,15 +14,14 @@ namespace bladeRF_GUI_v1
         public string program_dizini;
 
         /*-------------- Program Dizinleri----------------------*/
-        public string program_satgen { get; set; }
- 
-        public string program_sdr_console { get; set; }
-        public string program_ez_usb { get; set; }
-        public string program_gpif2 { get; set; }
-        public string program_gnu_radio { get; set; }
-        public string program_gnu_radio_python { get; set; }
-        public string program_gnu_radio_cwp { get; set; }
-        public string site_nmea_gen { get; set; } = "https://nmeagen.org/";
+        public string program_satgen            { get; set; }
+        public string program_sdr_console       { get; set; }
+        public string program_ez_usb            { get; set; }
+        public string program_gpif2             { get; set; }
+        public string program_gnu_radio         { get; set; }
+        public string program_gnu_radio_python  { get; set; }
+        public string program_gnu_radio_cwp     { get; set; }
+        public string site_nmea_gen             { get; set; } = "https://nmeagen.org/";
 
 
         // digerleri gelecek....
@@ -31,6 +30,7 @@ namespace bladeRF_GUI_v1
         public string gps_cli_dosya_yolu        { get; set; }
         public string galileo_cli_dosya_yolu    { get; set; }
         public string bladerf_cli_dosya_yolu    { get; set; }
+        public string repeater_cli_dosya_yolu    { get; set; }
         public string prog_cmd_dosya_yolu       { get; set; } = @"C:\Windows\system32\cmd.exe"; // C dizini icin Statik 
 
         public Ayarlar()
@@ -50,6 +50,12 @@ namespace bladeRF_GUI_v1
             gps_cli_dosya_yolu      = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "SimpleCode", "x64", "Release", "SimpleCode.exe"));
             galileo_cli_dosya_yolu  = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "gal_osnma_sim", "x64", "Debug", "gal_osnma_sim.exe"));
             bladerf_cli_dosya_yolu  = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "bladeRF", "x64", "bladeRF-cli.exe"));
+
+
+            repeater_cli_dosya_yolu = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "bladeRF", "x64", "bladeRF-cli.exe")); // duzenlenecek
+
+
+
         }
         public string dosya_secici()
         {

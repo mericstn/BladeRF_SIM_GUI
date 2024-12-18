@@ -1,0 +1,186 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\uc_yazma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\uc_yazma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\uc_yazma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\uc_yazma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\uc_okuma.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\uc_okuma.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\uc_okuma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\uc_okuma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\uc_tekrarlayici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\uc_tekrarlayici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\uc_tekrarlayici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\uc_tekrarlayici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\applicationusercontrols\\c_uygulamalar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:applicationusercontrols\\c_uygulamalar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\usercontrols\\uc_fonksiyonlar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:usercontrols\\uc_fonksiyonlar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\usercontrols\\uc_fonksiyonlar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:usercontrols\\uc_fonksiyonlar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|c:\\users\\pc_n_1066\\desktop\\bladerf_gui_v1\\usercontrols\\uc_fonksiyonlar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D340ECC-743C-4A8B-80A7-D65ED3C4249C}|bladeRF_GUI_v1.csproj|solutionrelative:usercontrols\\uc_fonksiyonlar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 202,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UC_Yazma.cs",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Yazma.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\UC_Yazma.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Yazma.cs",
+              "RelativeToolTip": "ApplicationUserControls\\UC_Yazma.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAowIIAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:19:24.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UC_Yazma.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Yazma.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\UC_Yazma.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Yazma.cs [Tasar\u0131m]",
+              "RelativeToolTip": "ApplicationUserControls\\UC_Yazma.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:07:44.605Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UC_Tekrarlayici.cs",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Tekrarlayici.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\UC_Tekrarlayici.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Tekrarlayici.cs",
+              "RelativeToolTip": "ApplicationUserControls\\UC_Tekrarlayici.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAADwvycAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T08:57:07.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Tekrarlayici.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Tekrarlayici.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\UC_Tekrarlayici.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Tekrarlayici.cs [Tasar\u0131m]",
+              "RelativeToolTip": "ApplicationUserControls\\UC_Tekrarlayici.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:08:37.086Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "C_Uygulamalar.cs",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\C_Uygulamalar.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\C_Uygulamalar.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\C_Uygulamalar.cs",
+              "RelativeToolTip": "ApplicationUserControls\\C_Uygulamalar.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBMAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:32:49.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UC_Fonksiyonlar.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\UserControls\\UC_Fonksiyonlar.cs",
+              "RelativeDocumentMoniker": "UserControls\\UC_Fonksiyonlar.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\UserControls\\UC_Fonksiyonlar.cs [Tasar\u0131m]",
+              "RelativeToolTip": "UserControls\\UC_Fonksiyonlar.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:21:43.523Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_Fonksiyonlar.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\UserControls\\UC_Fonksiyonlar.Designer.cs",
+              "RelativeDocumentMoniker": "UserControls\\UC_Fonksiyonlar.Designer.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\UserControls\\UC_Fonksiyonlar.Designer.cs",
+              "RelativeToolTip": "UserControls\\UC_Fonksiyonlar.Designer.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAADgv2EAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:21:40.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UC_Okuma.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Okuma.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\UC_Okuma.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Okuma.cs [Tasar\u0131m]",
+              "RelativeToolTip": "ApplicationUserControls\\UC_Okuma.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:07:55.43Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_Okuma.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Okuma.Designer.cs",
+              "RelativeDocumentMoniker": "ApplicationUserControls\\UC_Okuma.Designer.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\ApplicationUserControls\\UC_Okuma.Designer.cs",
+              "RelativeToolTip": "ApplicationUserControls\\UC_Okuma.Designer.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAiwO0CAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T12:12:32.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UC_Fonksiyonlar.cs",
+              "DocumentMoniker": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\UserControls\\UC_Fonksiyonlar.cs",
+              "RelativeDocumentMoniker": "UserControls\\UC_Fonksiyonlar.cs",
+              "ToolTip": "C:\\Users\\PC_N_1066\\Desktop\\bladeRF_GUI_v1\\UserControls\\UC_Fonksiyonlar.cs",
+              "RelativeToolTip": "UserControls\\UC_Fonksiyonlar.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAmwDQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T11:22:28.419Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -60,6 +60,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>bladeRF_GUI_v1.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,6 +78,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationUserControls\C_Uygulamalar.cs" />
+    <Compile Include="ApplicationUserControls\UC_Okuma.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationUserControls\UC_Okuma.Designer.cs">
+      <DependentUpon>UC_Okuma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationUserControls\UC_Tekrarlayici.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationUserControls\UC_Tekrarlayici.Designer.cs">
+      <DependentUpon>UC_Tekrarlayici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationUserControls\UC_Yazma.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationUserControls\UC_Yazma.Designer.cs">
+      <DependentUpon>UC_Yazma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\C_Ayarlar.cs" />
     <Compile Include="Classes\C_CLI.cs" />
     <Compile Include="Form1.cs">
@@ -151,6 +173,12 @@
     <Compile Include="UserControls\UC_CLI.Designer.cs">
       <DependentUpon>UC_CLI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Fonksiyonlar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Fonksiyonlar.Designer.cs">
+      <DependentUpon>UC_Fonksiyonlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Programlar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +197,15 @@
     <Compile Include="UserInfo\F_BilgilendirmeKutucugu.Designer.cs">
       <DependentUpon>F_BilgilendirmeKutucugu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplicationUserControls\UC_Okuma.resx">
+      <DependentUpon>UC_Okuma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationUserControls\UC_Tekrarlayici.resx">
+      <DependentUpon>UC_Tekrarlayici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationUserControls\UC_Yazma.resx">
+      <DependentUpon>UC_Yazma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_CLI.resx">
       <DependentUpon>UC_CLI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Fonksiyonlar.resx">
+      <DependentUpon>UC_Fonksiyonlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Programlar.resx">
       <DependentUpon>UC_Programlar.cs</DependentUpon>
@@ -246,7 +286,9 @@
     <None Include="Images\gns.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\pause.png" />
     <Content Include="Images\satellite.png" />
+    <None Include="Images\start_tri.png" />
     <None Include="Images\setupdevice.png" />
   </ItemGroup>
   <ItemGroup>
@@ -261,5 +303,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

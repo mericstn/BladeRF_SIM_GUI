@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bladeRF_GUI_v1.exe" size="921024">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bladeRF_GUI_v1.exe" size="1008064">
       <assemblyIdentity name="bladeRF_GUI_v1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>55jf0sj53AsYHCbdUpEyIoEGJbDjuWtut4/vQKeivb4=</dsig:DigestValue>
+        <dsig:DigestValue>Fl7Sr2KzGjxVsonTw58VeknXms3wY9qzygjEA+5G7cg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

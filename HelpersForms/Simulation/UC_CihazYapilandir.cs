@@ -230,5 +230,21 @@ namespace bladeRF_GUI_v1.HelpersForms
         {
             _sim_cfg.bladerf_tekrar = bladerf_tekrar_sayisi_textbox.Text;
         }
+
+        private void calistirilacak_dosya_adi_textbox_TextChanged(object sender, EventArgs e) // test
+        {
+            if (_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
+            {
+                _sim_cfg.sim_csv_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text ;
+            }
+            else if (_sim_cfg.gps_aktif && !_sim_cfg.galileo_aktif)
+            {
+                 _sim_cfg.gps_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text ;
+            }
+            else if (!_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
+            {
+                _sim_cfg.galileo_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text ;
+            }
+        }
     }
 }

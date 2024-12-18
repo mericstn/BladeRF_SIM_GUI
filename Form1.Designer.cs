@@ -39,6 +39,7 @@
             this.ayarlar_button = new System.Windows.Forms.Button();
             this.programlar_button = new System.Windows.Forms.Button();
             this.panel_container = new System.Windows.Forms.Panel();
+            this.uygulamalar_button = new System.Windows.Forms.Button();
             this.ust_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_alt.SuspendLayout();
@@ -92,21 +93,22 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.komut_istemcileri_button, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.yardimcilar_button, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ayarlar_button, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.programlar_button, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ayarlar_button, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.uygulamalar_button, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.programlar_button, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1284, 50);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -117,7 +119,7 @@
             this.komut_istemcileri_button.ForeColor = System.Drawing.SystemColors.Control;
             this.komut_istemcileri_button.Location = new System.Drawing.Point(3, 3);
             this.komut_istemcileri_button.Name = "komut_istemcileri_button";
-            this.komut_istemcileri_button.Size = new System.Drawing.Size(289, 44);
+            this.komut_istemcileri_button.Size = new System.Drawing.Size(250, 44);
             this.komut_istemcileri_button.TabIndex = 1;
             this.komut_istemcileri_button.Text = "Komut İstemcileri";
             this.komut_istemcileri_button.UseVisualStyleBackColor = false;
@@ -128,9 +130,9 @@
             this.yardimcilar_button.BackColor = System.Drawing.Color.MidnightBlue;
             this.yardimcilar_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.yardimcilar_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.yardimcilar_button.Location = new System.Drawing.Point(645, 3);
+            this.yardimcilar_button.Location = new System.Drawing.Point(515, 3);
             this.yardimcilar_button.Name = "yardimcilar_button";
-            this.yardimcilar_button.Size = new System.Drawing.Size(289, 44);
+            this.yardimcilar_button.Size = new System.Drawing.Size(250, 44);
             this.yardimcilar_button.TabIndex = 2;
             this.yardimcilar_button.Text = "Yardımcılar";
             this.yardimcilar_button.UseVisualStyleBackColor = false;
@@ -141,9 +143,9 @@
             this.ayarlar_button.BackColor = System.Drawing.Color.MidnightBlue;
             this.ayarlar_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ayarlar_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.ayarlar_button.Location = new System.Drawing.Point(966, 3);
+            this.ayarlar_button.Location = new System.Drawing.Point(1027, 3);
             this.ayarlar_button.Name = "ayarlar_button";
-            this.ayarlar_button.Size = new System.Drawing.Size(289, 44);
+            this.ayarlar_button.Size = new System.Drawing.Size(254, 44);
             this.ayarlar_button.TabIndex = 4;
             this.ayarlar_button.Text = "Ayarlar";
             this.ayarlar_button.UseVisualStyleBackColor = false;
@@ -154,9 +156,9 @@
             this.programlar_button.BackColor = System.Drawing.Color.MidnightBlue;
             this.programlar_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.programlar_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.programlar_button.Location = new System.Drawing.Point(324, 3);
+            this.programlar_button.Location = new System.Drawing.Point(771, 3);
             this.programlar_button.Name = "programlar_button";
-            this.programlar_button.Size = new System.Drawing.Size(289, 44);
+            this.programlar_button.Size = new System.Drawing.Size(250, 44);
             this.programlar_button.TabIndex = 3;
             this.programlar_button.Text = "Programlar";
             this.programlar_button.UseVisualStyleBackColor = false;
@@ -170,6 +172,19 @@
             this.panel_container.Name = "panel_container";
             this.panel_container.Size = new System.Drawing.Size(1284, 751);
             this.panel_container.TabIndex = 2;
+            // 
+            // uygulamalar_button
+            // 
+            this.uygulamalar_button.BackColor = System.Drawing.Color.MidnightBlue;
+            this.uygulamalar_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.uygulamalar_button.ForeColor = System.Drawing.SystemColors.Control;
+            this.uygulamalar_button.Location = new System.Drawing.Point(259, 3);
+            this.uygulamalar_button.Name = "uygulamalar_button";
+            this.uygulamalar_button.Size = new System.Drawing.Size(250, 44);
+            this.uygulamalar_button.TabIndex = 5;
+            this.uygulamalar_button.Text = "Uygulamalar";
+            this.uygulamalar_button.UseVisualStyleBackColor = false;
+            this.uygulamalar_button.Click += new System.EventHandler(this.uygulamalar_button_Click);
             // 
             // Form1
             // 
@@ -202,6 +217,7 @@
         private System.Windows.Forms.Button yardimcilar_button;
         private System.Windows.Forms.Button programlar_button;
         private System.Windows.Forms.Button ayarlar_button;
+        private System.Windows.Forms.Button uygulamalar_button;
     }
 }
 

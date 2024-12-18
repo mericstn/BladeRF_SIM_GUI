@@ -396,11 +396,11 @@
             // calistirilacak_dosya_adi_textbox
             // 
             this.calistirilacak_dosya_adi_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calistirilacak_dosya_adi_textbox.Enabled = false;
             this.calistirilacak_dosya_adi_textbox.Location = new System.Drawing.Point(350, 332);
             this.calistirilacak_dosya_adi_textbox.Name = "calistirilacak_dosya_adi_textbox";
             this.calistirilacak_dosya_adi_textbox.Size = new System.Drawing.Size(150, 20);
             this.calistirilacak_dosya_adi_textbox.TabIndex = 22;
+            this.calistirilacak_dosya_adi_textbox.TextChanged += new System.EventHandler(this.calistirilacak_dosya_adi_textbox_TextChanged);
             // 
             // UC_CihazYapilandir
             // 

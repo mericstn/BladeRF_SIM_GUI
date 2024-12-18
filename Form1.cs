@@ -14,6 +14,7 @@ namespace bladeRF_GUI_v1
         private UC_Yardimcilar  uc_yardimcilar;
         private UC_Programlar   uc_programlar;
         private UC_Ayarlar      uc_ayarlar;
+        private UC_Fonksiyonlar uc_fonksiyonlar;
             
 
         public Form1()
@@ -24,6 +25,7 @@ namespace bladeRF_GUI_v1
             uc_yardimcilar  = new UC_Yardimcilar(ayarlar);
             uc_programlar   = new UC_Programlar(ayarlar);
             uc_ayarlar      = new UC_Ayarlar(ayarlar);
+            uc_fonksiyonlar = new UC_Fonksiyonlar();
         }
        
         private void AddUserControl(UserControl userControl)
@@ -48,6 +50,7 @@ namespace bladeRF_GUI_v1
             yardimcilar_button.BackColor       = Color.MidnightBlue;
             programlar_button.BackColor        = Color.MidnightBlue;
             ayarlar_button.BackColor           = Color.MidnightBlue;
+            uygulamalar_button.BackColor       = Color.MidnightBlue;
             activeButton.BackColor             = Color.DarkBlue;
             
         }
@@ -69,6 +72,13 @@ namespace bladeRF_GUI_v1
 
             AddUserControl(uc_ayarlar);
             UpdateButtonColors(ayarlar_button);
+        }
+
+        private void uygulamalar_button_Click(object sender, EventArgs e)
+        {
+            AddUserControl(uc_fonksiyonlar);
+            UpdateButtonColors(uygulamalar_button);
+
         }
     }
 }
