@@ -141,7 +141,8 @@ namespace bladeRF_GUI_v1.UserControls
 
         private void Program_bladerf_cli_button_ClickAsync(object sender, EventArgs e)
         {
-
+            try 
+            {
             var process = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -155,7 +156,11 @@ namespace bladeRF_GUI_v1.UserControls
             };
 
             process.Start();
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Program çalıştırılamadı: {ex.Message}");
+            }
         }
 
         private void Site_nmeagen_button_Click(object sender, EventArgs e)

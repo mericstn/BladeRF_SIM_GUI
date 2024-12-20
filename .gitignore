@@ -6,3 +6,7 @@ Programs/gal_osnma_sim_dinamik.7z
 Programs/radioconda
 Programs/SDR_radio
 Programs/SatgenNMEA
+Programs/BladeRF_Repeater/.vs
+bin
+.vs
+obj
