@@ -9,7 +9,7 @@ namespace bladeRF_GUI_v1
 {
     public partial class Form1 : Form
     {
-        private Ayarlar         ayarlar;
+        private C_Ayarlar ayarlar;
         private UC_CLI          uc_cli;
         private UC_Yardimcilar  uc_yardimcilar;
         private UC_Programlar   uc_programlar;
@@ -20,12 +20,12 @@ namespace bladeRF_GUI_v1
         public Form1()
         {
             InitializeComponent();
-            ayarlar         = new Ayarlar(); 
+            ayarlar         = new C_Ayarlar(); 
             uc_cli          = new UC_CLI(ayarlar);
             uc_yardimcilar  = new UC_Yardimcilar(ayarlar);
             uc_programlar   = new UC_Programlar(ayarlar);
             uc_ayarlar      = new UC_Ayarlar(ayarlar);
-            uc_fonksiyonlar = new UC_Fonksiyonlar();
+            uc_fonksiyonlar = new UC_Fonksiyonlar(ayarlar);
         }
        
         private void AddUserControl(UserControl userControl)

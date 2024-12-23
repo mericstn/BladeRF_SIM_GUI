@@ -95,8 +95,8 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.repeater_cikti_richtextbox = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.durdur_picbox = new System.Windows.Forms.PictureBox();
             this.baslat_picbox = new System.Windows.Forms.PictureBox();
+            this.cihaz_parametrelerini_kur_picbox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,8 +108,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.durdur_picbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baslat_picbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cihaz_parametrelerini_kur_picbox)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -896,32 +896,19 @@
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.durdur_picbox, 1, 0);
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.Controls.Add(this.cihaz_parametrelerini_kur_picbox, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.baslat_picbox, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 233);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(485, 52);
             this.tableLayoutPanel8.TabIndex = 1;
-            // 
-            // durdur_picbox
-            // 
-            this.durdur_picbox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.durdur_picbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.durdur_picbox.Image = global::bladeRF_GUI_v1.Properties.Resources.pause;
-            this.durdur_picbox.Location = new System.Drawing.Point(245, 3);
-            this.durdur_picbox.Name = "durdur_picbox";
-            this.durdur_picbox.Size = new System.Drawing.Size(237, 46);
-            this.durdur_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.durdur_picbox.TabIndex = 1;
-            this.durdur_picbox.TabStop = false;
-            this.durdur_picbox.Click += new System.EventHandler(this.durdur_picbox_Click);
             // 
             // baslat_picbox
             // 
@@ -930,11 +917,24 @@
             this.baslat_picbox.Image = global::bladeRF_GUI_v1.Properties.Resources.start_tri;
             this.baslat_picbox.Location = new System.Drawing.Point(3, 3);
             this.baslat_picbox.Name = "baslat_picbox";
-            this.baslat_picbox.Size = new System.Drawing.Size(236, 46);
+            this.baslat_picbox.Size = new System.Drawing.Size(155, 46);
             this.baslat_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.baslat_picbox.TabIndex = 0;
             this.baslat_picbox.TabStop = false;
             this.baslat_picbox.Click += new System.EventHandler(this.baslat_picbox_Click);
+            // 
+            // cihaz_parametrelerini_kur_picbox
+            // 
+            this.cihaz_parametrelerini_kur_picbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cihaz_parametrelerini_kur_picbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cihaz_parametrelerini_kur_picbox.Image = global::bladeRF_GUI_v1.Properties.Resources.setupdevice;
+            this.cihaz_parametrelerini_kur_picbox.Location = new System.Drawing.Point(325, 3);
+            this.cihaz_parametrelerini_kur_picbox.Name = "cihaz_parametrelerini_kur_picbox";
+            this.cihaz_parametrelerini_kur_picbox.Size = new System.Drawing.Size(157, 46);
+            this.cihaz_parametrelerini_kur_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cihaz_parametrelerini_kur_picbox.TabIndex = 2;
+            this.cihaz_parametrelerini_kur_picbox.TabStop = false;
+            this.cihaz_parametrelerini_kur_picbox.Click += new System.EventHandler(this.cihaz_parametrelerini_kur_picbox_Click);
             // 
             // UC_Tekrarlayici
             // 
@@ -958,8 +958,8 @@
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.durdur_picbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baslat_picbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cihaz_parametrelerini_kur_picbox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1003,7 +1003,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.RichTextBox repeater_cikti_richtextbox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.PictureBox durdur_picbox;
         private System.Windows.Forms.PictureBox baslat_picbox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -1035,5 +1034,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox tx_kanal_combobox;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.PictureBox cihaz_parametrelerini_kur_picbox;
     }
 }

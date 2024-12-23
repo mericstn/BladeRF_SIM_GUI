@@ -1,3 +1,5 @@
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\channel.c;C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\BladeRF_Repeater\x64\Debug\channel.obj
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\get_parameter.c;C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\BladeRF_Repeater\x64\Debug\get_parameter.obj
 C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\main.c;C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\BladeRF_Repeater\x64\Debug\main.obj
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\rxtx.c;C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\BladeRF_Repeater\x64\Debug\rxtx.obj
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\mod_rxtx.c;C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\BladeRF_Repeater\x64\Debug\mod_rxtx.obj
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\mod_tx.c;C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\BladeRF_Repeater\x64\Debug\mod_tx.obj

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "parameters.h"
-
+#include "channel.h"
 
 /* todo :  rx-tx icin essiz olacak sekilde duzenle*/
 
@@ -10,7 +10,7 @@
 #define RXTX_TAMPON_SAYISI					(32)
 #define RXTX_VERI_TRANSFER_SAYISI			(16)
 #define RXTX_ZAMAN_ASIMI					(1000)
-#define RXTX_ORNEK_ALMA_GONDERME_SAYISI		(100000)		// 0 ise program sonlandirilana kadar  // todo : program suresi boyutu ayari eklenecek
+#define RXTX_ORNEK_ALMA_GONDERME_SAYISI		(100000)		// todo :  0 ise program sonlandirilana kadar  // todo : program suresi boyutu ayari eklenecek
 
 
 typedef enum {
@@ -35,7 +35,6 @@ typedef struct
 }rxtx_parametreleri_t;
 
 
-void kanal_baslat(struct bladerf* cihaz_st, kanal_t* kanal_st);
-void kanal_bilgi_yazdir(struct bladerf* cihaz_st, kanal_t* kanal_st);
+
 bool do_work(rxtx_parametreleri_t* rxtx_parametreleri_st, int16_t* rx, unsigned int rx_len, bool* have_tx_data, int16_t* tx, unsigned int tx_len); // not : duruma gore bunu kaldir
 void mod_rxtx(struct bladerf* cihaz_st, rxtx_parametreleri_t* rxtx_parametreleri_st, kanal_t* tx_kanal_st, kanal_t* rx_kanal_st);

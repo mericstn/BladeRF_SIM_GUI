@@ -8,7 +8,7 @@
 #include <assert.h>
 #include"bladeRF2.h" 
 
-#define TOPLAM_PARAMETRE_SAYISI    (24)
+#define TOPLAM_PARAMETRE_SAYISI    (25)
 
 
 
@@ -27,16 +27,16 @@
 #define RX_GAIN					  (45)			//Db40
 #define RX_TIMEOUT			      (600)			//ms
 
+
+
 #define HATA_KONTROL(fonksiyon, mesaj_u8a) \
     do { \
         uint8_t durum_u8 = (fonksiyon); \
         if (durum_u8 != 0) { \
-            fprintf(stderr, "Hata: %s -> %s\n", (mesaj_u8a), bladerf_strerror(durum_u8)); \
+            printf("Hata: %s -> %s\n", (mesaj_u8a), bladerf_strerror(durum_u8)); \
             exit(EXIT_FAILURE); \
         } \
     } while (0)
-
-
 
 
 

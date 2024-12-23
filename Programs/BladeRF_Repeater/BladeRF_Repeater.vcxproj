@@ -134,14 +134,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="channel.c" />
     <ClCompile Include="get_parameter.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="rxtx.c" />
+    <ClCompile Include="mod_rxtx.c" />
+    <ClCompile Include="mod_tx.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="channel.h" />
     <ClInclude Include="get_parameter.h" />
+    <ClInclude Include="mod_tx.h" />
     <ClInclude Include="parameters.h" />
-    <ClInclude Include="rxtx.h" />
+    <ClInclude Include="mod_rxtx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,13 +16,16 @@ namespace bladeRF_GUI_v1.UserControls
         private UC_Okuma            uc_okuma;
         private UC_Yazma            uc_yazma;
         private UC_Tekrarlayici     uc_tekrarlayici;
+        private C_Ayarlar           c_ayarlar;
 
-        public UC_Fonksiyonlar()
+        public UC_Fonksiyonlar(C_Ayarlar _ayarlar)
         {
+            
             InitializeComponent();
-            uc_okuma            = new UC_Okuma();
-            uc_yazma            = new UC_Yazma();
-            uc_tekrarlayici     = new UC_Tekrarlayici();
+            c_ayarlar           = _ayarlar;
+            uc_okuma            = new UC_Okuma(); // todo ayarlar eklenecek
+            uc_yazma            = new UC_Yazma(); // todo ayarlar eklenecek
+            uc_tekrarlayici     = new UC_Tekrarlayici(c_ayarlar);
         }
         private void AddUserControl(UserControl userControl)
         {

@@ -9,7 +9,7 @@ using System.IO;
 
 namespace bladeRF_GUI_v1
 {
-    public class Ayarlar
+    public class C_Ayarlar
     {
         public string program_dizini;
 
@@ -31,9 +31,11 @@ namespace bladeRF_GUI_v1
         public string galileo_cli_dosya_yolu    { get; set; }
         public string bladerf_cli_dosya_yolu    { get; set; }
         public string repeater_cli_dosya_yolu    { get; set; }
+        public string repeater_parametre_dosya_yolu   { get; set; }
         public string prog_cmd_dosya_yolu       { get; set; } = @"C:\Windows\system32\cmd.exe"; // C dizini icin Statik 
 
-        public Ayarlar()
+
+        public C_Ayarlar()
         {
             program_dizini   = AppDomain.CurrentDomain.BaseDirectory; // C:\Users\PC_3740\Desktop\GYT_MericSetan_GuzDonemi_Staj\Calismalar\Blade_RF\bladerf_gui_vers\bladeRF_GUI_v1\bin\Debug\
 
@@ -52,8 +54,8 @@ namespace bladeRF_GUI_v1
             bladerf_cli_dosya_yolu  = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "bladeRF", "x64", "bladeRF-cli.exe"));
 
 
-            repeater_cli_dosya_yolu = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "bladeRF", "x64", "bladeRF-cli.exe")); // duzenlenecek
-
+            repeater_cli_dosya_yolu         = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "BladeRF_Repeater", "x64","Debug", "BladeRF_Repeater.exe")); 
+            repeater_parametre_dosya_yolu   = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Inputs", "BladeRF", "application_parameters.csv")); 
 
 
         }

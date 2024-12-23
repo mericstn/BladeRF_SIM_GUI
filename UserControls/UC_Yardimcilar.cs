@@ -15,8 +15,8 @@ namespace bladeRF_GUI_v1.UserControls
     {
         private F_Yardimci yardimci;
         private F_KurulumYardimcisi kurulum_yardimci;
-        private Ayarlar _ayarlar;
-        public UC_Yardimcilar(Ayarlar ayarlar)
+        private C_Ayarlar _ayarlar;
+        public UC_Yardimcilar(C_Ayarlar ayarlar)
         {
             _ayarlar = ayarlar;
             InitializeComponent();

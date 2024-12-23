@@ -21,7 +21,13 @@
     <ClCompile Include="get_parameter.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="rxtx.c">
+    <ClCompile Include="mod_rxtx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mod_tx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="channel.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +38,13 @@
     <ClInclude Include="parameters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rxtx.h">
+    <ClInclude Include="mod_rxtx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="channel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mod_tx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

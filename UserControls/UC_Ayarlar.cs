@@ -12,8 +12,8 @@ namespace bladeRF_GUI_v1.UserControls
 {
     public partial class UC_Ayarlar : UserControl
     {
-        private Ayarlar _ayarlar;
-        public UC_Ayarlar(Ayarlar ayarlar)
+        private C_Ayarlar _ayarlar;
+        public UC_Ayarlar(C_Ayarlar ayarlar)
         {
             _ayarlar = ayarlar;
             InitializeComponent();

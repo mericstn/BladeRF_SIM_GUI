@@ -9,8 +9,8 @@ namespace bladeRF_GUI_v1.Classes
 {
     class C_CLI
     {
-        private Ayarlar _ayarlar;
-        public C_CLI(Ayarlar ayarlar)
+        private C_Ayarlar _ayarlar;
+        public C_CLI(C_Ayarlar ayarlar)
         {
             _ayarlar = ayarlar;
         }
@@ -45,6 +45,9 @@ namespace bladeRF_GUI_v1.Classes
                         break;
                     case ("Galileo"):
                         process.StartInfo.Arguments = $"/c {_ayarlar.galileo_cli_dosya_yolu} {komut}";
+                        break;
+                    case ("Repeater"):
+                        process.StartInfo.Arguments = $"/c {_ayarlar.repeater_cli_dosya_yolu} {komut}";
                         break;
                     default:
                         break;

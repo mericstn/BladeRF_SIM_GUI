@@ -14,9 +14,9 @@ namespace bladeRF_GUI_v1.UserControls
 {
     public partial class UC_CLI : UserControl
     {
-        private Ayarlar _ayarlar;
+        private C_Ayarlar _ayarlar;
         private C_CLI _cli;
-        public UC_CLI(Ayarlar ayarlar)
+        public UC_CLI(C_Ayarlar ayarlar)
         {
 
             _ayarlar = ayarlar;
@@ -27,6 +27,7 @@ namespace bladeRF_GUI_v1.UserControls
 
         private async void Cmd_gonder_button_Click(object sender, EventArgs e)
         {
+            
             cmd_gonder_button.Enabled = false;
             var (result, arguments) = await _cli.CLI_isleyici_statik(cmd_komut_girdi_richtextbox.Text, "CMD");
 
