@@ -1,6 +1,7 @@
-prog_cihaz_versiyon,1575420000
+prog_cihaz_versiyon,BladeRF v2.0
 prog_mod,RXTX
-kanal_tx_kanal_adi,TX
+prog_sure,120
+kanal_tx_kanal_adi,TX1
 kanal_tx_kanal,TX1
 kanal_tx_frekans,1575420000
 kanal_tx_ornekleme_orani,12000000
@@ -8,7 +9,7 @@ kanal_tx_bant_genisligi,50000000
 kanal_tx_kazanc,45
 kanal_tx_zaman_asimi,500
 kanal_tx_bias_tee,Kapali
-kanal_rx_kanal_adi,RX
+kanal_rx_kanal_adi,RX2
 kanal_rx_kanal,RX1
 kanal_rx_frekans,1575420000
 kanal_rx_ornekleme_orani,12000000

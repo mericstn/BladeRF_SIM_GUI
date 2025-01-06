@@ -1,0 +1,12 @@
+﻿  readTestvectors.c
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\readTestvectors.c(394): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\readTestvectors.c(424): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\source\repos\gal_osnma_sim\src\readTestvectors.c(475): warning C4267: 'function': conversion from 'size_t' to 'long', possible loss of data
+  Generating code
+  4 of 69 functions ( 5.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    19 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  gal_osnma_sim.vcxproj -> C:\Users\PC_3740\source\repos\gal_osnma_sim\x64\Release\gal_osnma_sim.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

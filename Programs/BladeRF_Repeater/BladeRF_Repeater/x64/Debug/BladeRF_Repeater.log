@@ -1,18 +1,1 @@
-﻿  channel.c
-  main.c
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\channel.c(57,9): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 2 has type 'bladerf_frequency'
-      C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\channel.c(57,9):
-      consider using '%lld' in the format string
-      C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\channel.c(57,9):
-      consider using '%Id' in the format string
-      C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\channel.c(57,9):
-      consider using '%I64d' in the format string
-  
-  mod_rxtx.c
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\mod_rxtx.c(32,38): warning C4133: 'function': incompatible types - from 'bias_tee_t *' to 'bool *'
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\mod_rxtx.c(107,81): warning C4133: 'function': incompatible types - from 'veri_durumu_t *' to 'bool *'
-  mod_tx.c
-  Generating Code...
-  BladeRF_Repeater.vcxproj -> C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\x64\Debug\BladeRF_Repeater.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+﻿  BladeRF_Repeater.vcxproj -> C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\BladeRF_Repeater\x64\Debug\BladeRF_Repeater.exe

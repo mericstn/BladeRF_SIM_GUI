@@ -47,5 +47,8 @@
     <ClInclude Include="mod_tx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="new.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

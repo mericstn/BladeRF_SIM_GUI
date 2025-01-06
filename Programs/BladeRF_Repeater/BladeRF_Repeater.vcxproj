@@ -144,6 +144,7 @@
     <ClInclude Include="channel.h" />
     <ClInclude Include="get_parameter.h" />
     <ClInclude Include="mod_tx.h" />
+    <ClInclude Include="new.h" />
     <ClInclude Include="parameters.h" />
     <ClInclude Include="mod_rxtx.h" />
   </ItemGroup>

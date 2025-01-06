@@ -1,21 +1,39 @@
 ﻿  gal_osnma_sim.c
+  conversion.c
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\conversion.c(288,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\conversion.c(292,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\conversion.c(296,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\conversion.c(373,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\conversion.c(377,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\conversion.c(381,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  ephemgal.c
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\ephemgal.c(97,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\ephemgal.c(100,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\ephemgal.c(108,45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\ephemgal.c(112,45): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  fifoBuffer.c
   gal-sdr-sim.c
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(30): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(215): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(263): warning C4101: 'toe_utc': unreferenced local variable
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(263): warning C4101: 'toc_utc': unreferenced local variable
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(262): warning C4101: 'eph': unreferenced local variable
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(364): warning C4028: formal parameter 1 different from declaration
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(491): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-  C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(491): note: consider using '%zd' in the format string
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(30,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(141,56): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(192,23): warning C4101: 'toe_utc': unreferenced local variable
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(192,14): warning C4101: 'toc_utc': unreferenced local variable
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(436,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\gal-sdr-sim.c(436,12): message : consider using '%zd' in the format string
+  galsignal.c
+  galWord.c
+  hackrf-tr.c
+  motionType.c
   readTestvectors.c
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(397): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(425): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(405): warning C4102: 'endwhile': unreferenced label
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(479): warning C4267: 'function': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(397,41): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(425,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(405,10): warning C4102: 'endwhile': unreferenced label
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\readTestvectors.c(479,32): warning C4267: 'function': conversion from 'size_t' to 'long', possible loss of data
+  receiver.c
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\receiver.c(49,30): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   satListType.c
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\satListType.c(199): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\satListType.c(396): warning C4028: formal parameter 1 different from declaration
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\src\satListType.c(198,1): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  signalControl.c
+  uc_birim.c
   updateThread.c
   Generating Code...
   gal_osnma_sim.vcxproj -> C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\x64\Debug\gal_osnma_sim.exe

@@ -10,7 +10,8 @@ namespace bladeRF_GUI_v1.ApplicationUserControls
     public class C_Uygulamalar
     {
 
-        public string cihaz_model           { get; set; } = "BladeRFv2.0";
+        public string cihaz_model           { get; set; } = "BladeRF v2.0";
+        public string prog_sure             { get; set; } = "120";
         // struct tanimlanabilir !!!
         /*-------------------------TX KANAL---------------------------------------*/
         public string kanal_tx_frekans          { get; set; } = "1575420000";
@@ -73,10 +74,11 @@ namespace bladeRF_GUI_v1.ApplicationUserControls
 
         public bool cihaz_parametrelerini_kur(string MOD,string parametreler_csv_dosya_yolu)
         {
-            satir_ekle("prog_cihaz_versiyon"                , this.kanal_tx_frekans);
+            satir_ekle("prog_cihaz_versiyon"                , this.cihaz_model);
             satir_ekle("prog_mod"                           , MOD);
+            satir_ekle("prog_sure"                          , this.prog_sure);
 
-            satir_ekle("kanal_tx_kanal_adi"                 , "TX");
+            satir_ekle("kanal_tx_kanal_adi"                 , "TX1");
             satir_ekle("kanal_tx_kanal"                     , this.kanal_tx_kanal);
             satir_ekle("kanal_tx_frekans"                   , this.kanal_tx_frekans);
             satir_ekle("kanal_tx_ornekleme_orani"           , this.kanal_tx_ornekleme_orani);
@@ -85,7 +87,7 @@ namespace bladeRF_GUI_v1.ApplicationUserControls
             satir_ekle("kanal_tx_zaman_asimi"               , this.kanal_tx_zaman_asimi);
             satir_ekle("kanal_tx_bias_tee"                  , this.kanal_tx_biastee);
 
-            satir_ekle("kanal_rx_kanal_adi"                 , "RX");
+            satir_ekle("kanal_rx_kanal_adi"                 , "RX2");
             satir_ekle("kanal_rx_kanal"                     , this.kanal_rx_kanal);
             satir_ekle("kanal_rx_frekans"                   , this.kanal_tx_frekans);
             satir_ekle("kanal_rx_ornekleme_orani"           , this.kanal_rx_ornekleme_orani);

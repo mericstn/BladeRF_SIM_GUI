@@ -48,7 +48,9 @@ namespace bladeRF_GUI_v1.ApplicationUserControls
             vap_tampon_sayisi_textbox.Text          = c_tekrarlayici.rxtx_tampon_sayisi;
             vap_tampon_boyutu_textbox.Text          = c_tekrarlayici.rxtx_tampon_boyutu;
             vap_veri_transfer_sayisi_textbox.Text   = c_tekrarlayici.rxtx_veri_transfer_sayisi;
-            vap_zaman_asimi_textbox.Text            = c_tekrarlayici.rxtx_zaman_asimi;         
+            vap_zaman_asimi_textbox.Text            = c_tekrarlayici.rxtx_zaman_asimi;
+
+            c_tekrarlayici.prog_sure = prog_sure_textbox.Text;
         }
 
         private void cihaz_parametrelerini_kur_picbox_Click(object sender, EventArgs e)
@@ -200,6 +202,9 @@ namespace bladeRF_GUI_v1.ApplicationUserControls
             }
         }
 
-     
+        private void prog_sure_textbox_TextChanged(object sender, EventArgs e)
+        {
+            c_tekrarlayici.prog_sure = prog_sure_textbox.Text;
+        }
     }
 }

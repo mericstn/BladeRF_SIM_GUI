@@ -8,7 +8,7 @@
 #include <assert.h>
 #include"bladeRF2.h" 
 
-#define TOPLAM_PARAMETRE_SAYISI    (25)
+#define TOPLAM_PARAMETRE_SAYISI    (26)
 
 
 
@@ -18,16 +18,16 @@
 #define TX_SAMPLE_RATE			  (12000000)	//Hz
 #define TX_BANDWIDTH		      (50000000)	//Hz
 #define TX_GAIN					  (45)			//Db45
-#define TX_TIMEOUT				  (600)			//ms
+#define TX_TIMEOUT				  (1000)			//ms
 
 #define RX_CHANNEL_NAME			  "RX"
 #define RX_FREQ		    (uint64_t)(1575420000)	//Hz
 #define RX_SAMPLE_RATE			  (12000000)	//Hz
 #define RX_BANDWIDTH			  (50000000)	//Hz
 #define RX_GAIN					  (45)			//Db40
-#define RX_TIMEOUT			      (600)			//ms
+#define RX_TIMEOUT			      (1000)			//ms
 
-
+#define PROG_SURE_SANIYE		  (600)			//sn
 
 #define HATA_KONTROL(fonksiyon, mesaj_u8a) \
     do { \
@@ -90,6 +90,7 @@ typedef struct
 {
 	cihaz_versiyon_t cihaz_versiyon_et;
 	mod_t			 mod_et;
+	uint32_t		 program_sure_saniye_u32; // 0 ise sonsuz
 }program_t;
 
 

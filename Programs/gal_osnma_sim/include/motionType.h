@@ -38,7 +38,6 @@
  */
 typedef enum motionType_t{
     STATIC, ///<@brief static possition 
-	DYNAMIC
 }motionType_t;
 
 /** @brief structur contain list of receiver position.

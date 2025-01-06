@@ -1,0 +1,6 @@
+C:\Users\PC_3740\source\repos\gal_osnma_sim\x64\Debug\gal_osnma_sim.vcxproj.CopyComplete
+C:\Users\PC_3740\source\repos\gal_osnma_sim\x64\Debug\gal_osnma_sim.exe
+C:\Users\PC_3740\source\repos\gal_osnma_sim\x64\Debug\pthreadVC3d.dll
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\x64\Debug\gal_osnma_sim.vcxproj.CopyComplete
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\x64\Debug\gal_osnma_sim.exe
+C:\Users\PC_3740\Desktop\proje\BladeRF_SIM_GUI\Programs\gal_osnma_sim\x64\Debug\pthreadVC3d.dll

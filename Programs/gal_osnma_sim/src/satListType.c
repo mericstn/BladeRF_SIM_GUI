@@ -195,9 +195,7 @@ void initChan(channel_t* chan, struct satData_t* satData, const receiver_t* rece
  * @param[in] receiver
  */
 void updateChan(channel_t* chan, receiver_t* receiver){
-
     float deltaT = getTime(*receiver).tow-chan->g.tow;
-
     if (deltaT>DELTA_T/100){
             // update range
         pthread_mutex_lock(&receiver->lock);
@@ -213,7 +211,7 @@ void updateChan(channel_t* chan, receiver_t* receiver){
     chan->r = range;
     chan->g = getTime(*receiver);
     iPageUpdate(chan);
-
+#if TEST_NAN
     if (chan->fDoppler==0){
         printf(" fDoppler = %f",chan->fDoppler);
     }
@@ -221,7 +219,7 @@ void updateChan(channel_t* chan, receiver_t* receiver){
         printf("error NAN chan.f_code in updateFrec() %f\n", chan->f_code);
         exit(5);
     }
-
+#endif
     }
 }
 
@@ -250,9 +248,9 @@ void iPageUpdate(channel_t* chan){
     
 	if(chan->ipage!=ipage%N_PAGE){
         //newPage(chan);
-
-    //printf("init chan %i: ibit %i, ipage %i\n", chan->svId+1, ibit, ipage);
-
+#if PRINT_INIT_PAGE
+        printf("init chan %i: ibit %i, ipage %i\n", chan->svId+1, ibit, ipage);
+#endif
     }
     
 #if TEST_PHASE_UPDATE

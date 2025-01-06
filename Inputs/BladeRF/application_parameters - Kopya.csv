@@ -1,30 +1,131 @@
-prog_cihaz_versiyon,2
-prog_mod,TX
-
+prog_cihaz_versiyon,BladeRF v2.0
+prog_mod,RXTX
+prog_sure,0
 kanal_tx_kanal_adi,TX
-kanal_tx_kanal,1
+kanal_tx_kanal,TX1
 kanal_tx_frekans,1575420000
 kanal_tx_ornekleme_orani,12000000
 kanal_tx_bant_genisligi,50000000
 kanal_tx_kazanc,45
-kanal_tx_zaman_asimi,600
-kanal_tx_bias_tee,0
-
+kanal_tx_zaman_asimi,500
+kanal_tx_bias_tee,Kapali
 kanal_rx_kanal_adi,RX
-kanal_rx_kanal,0
+kanal_rx_kanal,RX2
 kanal_rx_frekans,1575420000
 kanal_rx_ornekleme_orani,12000000
 kanal_rx_bant_genisligi,50000000
 kanal_rx_kazanc,45
-kanal_rx_zaman_asimi,600
-kanal_rx_bias_tee,1
-
+kanal_rx_zaman_asimi,500
+kanal_rx_bias_tee,Aktif
 rxtx_ornek_uzunlugu,32768
 rxtx_tampon_boyutu,32768
 rxtx_tampon_sayisi,32
 rxtx_veri_transfer_sayisi,16
 rxtx_zaman_asimi,1000
 rxtx_ornek_alma_gonderme_sayisi,100000
-
 tx_dosya_adi,gpssim.bin
 
+
+
+-16tx ya 60rx
+
+
+
+
+prog_cihaz_versiyon,BladeRF v2.0
+prog_mod,RXTX
+prog_sure,60
+kanal_tx_kanal_adi,TX1
+kanal_tx_kanal,TX1
+kanal_tx_frekans,2575420000
+kanal_tx_ornekleme_orani,2600000
+kanal_tx_bant_genisligi,30000000
+kanal_tx_kazanc,46
+kanal_tx_zaman_asimi,500
+kanal_tx_bias_tee,Kapali
+kanal_rx_kanal_adi,RX2
+kanal_rx_kanal,RX2
+kanal_rx_frekans,1575420000
+kanal_rx_ornekleme_orani,2600000
+kanal_rx_bant_genisligi,30000000
+kanal_rx_kazanc,46
+kanal_rx_zaman_asimi,500
+kanal_rx_bias_tee,Aktif
+rxtx_ornek_uzunlugu,32768
+rxtx_tampon_boyutu,32768
+rxtx_tampon_sayisi,32
+rxtx_veri_transfer_sayisi,16
+rxtx_zaman_asimi,1000
+rxtx_ornek_alma_gonderme_sayisi,100000000
+tx_dosya_adi,gpssim.bin
+
+
+
+#define DEFAULT_NUM_BUFFERS         32      
+#define DEFAULT_NUM_TRANSFERS       16       // DR = (SR*SPB)/(1024^2) <=400 (Mb/s)
+#define DEFAULT_SAMPLES_PER_BUFFER  32768       
+
+#define DEFAULT_SAMPLE_RATE         40000000    // bw*2 = SR            SR*2 <80mhz  -RX -TX
+#define DEFAULT_FREQUENCY           1575420000  //L1 
+#define DEFAULT_BANDWIDTH           20000000    // L1 <24Mhz> 
+
+
+
+
+#define DEFAULT_NUM_BUFFERS         32      
+#define DEFAULT_NUM_TRANSFERS       16       // DR = (SR*SPB)/(1024^2) <=400 (Mb/s)
+#define DEFAULT_SAMPLES_PER_BUFFER  32768       
+
+#define DEFAULT_SAMPLE_RATE         16000000    // bw*2 = SR            SR*2 <80mhz  -RX -TX
+#define DEFAULT_FREQUENCY           1575420000  //L1 
+#define DEFAULT_BANDWIDTH           32000000    // L1 <24Mhz> 
+#include "bladeRF2.h"
+
+
+*-------------------*
+#define DEFAULT_NUM_BUFFERS         32      
+#define DEFAULT_NUM_TRANSFERS       16       // DR = (SR*SPB)/(1024^2) <=400 (Mb/s)
+#define DEFAULT_SAMPLES_PER_BUFFER  32768      
+
+#define DEFAULT_SAMPLE_RATE         30000000    // bw*2 = SR            SR*2 <80mhz  -RX -TX
+#define DEFAULT_FREQUENCY           1575420000  //L1 
+#define DEFAULT_BANDWIDTH           15000000    // L1 <24Mhz> 
+
+
+
+
+     */
+    const unsigned int num_buffers   = 16;
+    const unsigned int buffer_size   = 8192; /* Must be a multiple of 1024 */
+    const unsigned int num_transfers = 8;
+    const unsigned int timeout_ms    = 3500;
+	
+	
+	
+	prog_cihaz_versiyon,BladeRF v2.0
+prog_mod,RXTX
+prog_sure,180
+kanal_tx_kanal_adi,TX1
+kanal_tx_kanal,TX1
+kanal_tx_frekans,1575420000
+kanal_tx_ornekleme_orani,40000000
+kanal_tx_bant_genisligi,24000000
+kanal_tx_kazanc,30
+kanal_tx_zaman_asimi,500
+kanal_tx_bias_tee,Kapali
+kanal_rx_kanal_adi,RX2
+kanal_rx_kanal,RX2
+kanal_rx_frekans,1575420000
+kanal_rx_ornekleme_orani,40000000
+kanal_rx_bant_genisligi,24000000
+kanal_rx_kazanc,60
+kanal_rx_zaman_asimi,500
+kanal_rx_bias_tee,Kapali
+rxtx_ornek_uzunlugu,32768
+rxtx_tampon_boyutu,32768
+rxtx_tampon_sayisi,32
+rxtx_veri_transfer_sayisi,16
+rxtx_zaman_asimi,1000
+rxtx_ornek_alma_gonderme_sayisi,100000000
+tx_dosya_adi,gpssim.bin
+ s

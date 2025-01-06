@@ -91,12 +91,14 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.repeater_cikti_richtextbox = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.baslat_picbox = new System.Windows.Forms.PictureBox();
             this.cihaz_parametrelerini_kur_picbox = new System.Windows.Forms.PictureBox();
+            this.baslat_picbox = new System.Windows.Forms.PictureBox();
+            this.dfgfdg = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.prog_sure_textbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,8 +110,8 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.baslat_picbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cihaz_parametrelerini_kur_picbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baslat_picbox)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -714,6 +716,9 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel6.Controls.Add(this.prog_sure_textbox, 2, 4);
+            this.tableLayoutPanel6.Controls.Add(this.label38, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.dfgfdg, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.label22, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.label23, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.label24, 1, 1);
@@ -726,7 +731,6 @@
             this.tableLayoutPanel6.Controls.Add(this.label27, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label28, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label29, 0, 3);
-            this.tableLayoutPanel6.Controls.Add(this.label38, 2, 4);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -859,16 +863,6 @@
             this.label29.TabIndex = 8;
             this.label29.Text = "Zaman Aşımı";
             // 
-            // label38
-            // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(172, 234);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(196, 13);
-            this.label38.TabIndex = 14;
-            this.label38.Text = "Sadece BladeRF v2.0 için test edilmiştir.";
-            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
@@ -910,6 +904,19 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(485, 52);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
+            // cihaz_parametrelerini_kur_picbox
+            // 
+            this.cihaz_parametrelerini_kur_picbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cihaz_parametrelerini_kur_picbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cihaz_parametrelerini_kur_picbox.Image = global::bladeRF_GUI_v1.Properties.Resources.setupdevice;
+            this.cihaz_parametrelerini_kur_picbox.Location = new System.Drawing.Point(325, 3);
+            this.cihaz_parametrelerini_kur_picbox.Name = "cihaz_parametrelerini_kur_picbox";
+            this.cihaz_parametrelerini_kur_picbox.Size = new System.Drawing.Size(157, 46);
+            this.cihaz_parametrelerini_kur_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cihaz_parametrelerini_kur_picbox.TabIndex = 2;
+            this.cihaz_parametrelerini_kur_picbox.TabStop = false;
+            this.cihaz_parametrelerini_kur_picbox.Click += new System.EventHandler(this.cihaz_parametrelerini_kur_picbox_Click);
+            // 
             // baslat_picbox
             // 
             this.baslat_picbox.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -923,18 +930,36 @@
             this.baslat_picbox.TabStop = false;
             this.baslat_picbox.Click += new System.EventHandler(this.baslat_picbox_Click);
             // 
-            // cihaz_parametrelerini_kur_picbox
+            // dfgfdg
             // 
-            this.cihaz_parametrelerini_kur_picbox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cihaz_parametrelerini_kur_picbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cihaz_parametrelerini_kur_picbox.Image = global::bladeRF_GUI_v1.Properties.Resources.setupdevice;
-            this.cihaz_parametrelerini_kur_picbox.Location = new System.Drawing.Point(325, 3);
-            this.cihaz_parametrelerini_kur_picbox.Name = "cihaz_parametrelerini_kur_picbox";
-            this.cihaz_parametrelerini_kur_picbox.Size = new System.Drawing.Size(157, 46);
-            this.cihaz_parametrelerini_kur_picbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cihaz_parametrelerini_kur_picbox.TabIndex = 2;
-            this.cihaz_parametrelerini_kur_picbox.TabStop = false;
-            this.cihaz_parametrelerini_kur_picbox.Click += new System.EventHandler(this.cihaz_parametrelerini_kur_picbox_Click);
+            this.dfgfdg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dfgfdg.AutoSize = true;
+            this.dfgfdg.Location = new System.Drawing.Point(3, 234);
+            this.dfgfdg.Name = "dfgfdg";
+            this.dfgfdg.Size = new System.Drawing.Size(78, 13);
+            this.dfgfdg.TabIndex = 14;
+            this.dfgfdg.Text = "Program Süresi";
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label38.Location = new System.Drawing.Point(150, 232);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(13, 17);
+            this.label38.TabIndex = 15;
+            this.label38.Text = ":";
+            // 
+            // prog_sure_textbox
+            // 
+            this.prog_sure_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.prog_sure_textbox.Location = new System.Drawing.Point(242, 230);
+            this.prog_sure_textbox.Name = "prog_sure_textbox";
+            this.prog_sure_textbox.Size = new System.Drawing.Size(169, 20);
+            this.prog_sure_textbox.TabIndex = 16;
+            this.prog_sure_textbox.Text = "120";
+            this.prog_sure_textbox.TextChanged += new System.EventHandler(this.prog_sure_textbox_TextChanged);
             // 
             // UC_Tekrarlayici
             // 
@@ -958,8 +983,8 @@
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.baslat_picbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cihaz_parametrelerini_kur_picbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baslat_picbox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1033,7 +1058,9 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox tx_kanal_combobox;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.PictureBox cihaz_parametrelerini_kur_picbox;
+        private System.Windows.Forms.TextBox prog_sure_textbox;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label dfgfdg;
     }
 }

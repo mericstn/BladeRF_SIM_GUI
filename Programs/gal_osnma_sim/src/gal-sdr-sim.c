@@ -70,49 +70,14 @@ void usage(void) {
 			"Copyright \u00A9 2023 FDC\n\n");
     return;
 }
-/*! \brief Read the list of user motions from the input file
- *  \param[out] xyz Output array of ECEF vectors for user motion
- *  \param[[in] filename File name of the text input file
- *  \returns Number of user data motion records read, -1 on error
- */
-int readUserMotion(double xyz[KULLANICI_HAREKET_BOYUTU][3], const char* filename)
-{
-	FILE* fp;
-	int numd;
-	char str[MAX_CHAR];
-	double t, x, y, z;
 
-	if (NULL == (fp = fopen(filename, "rt")))
-		return(-1);
-
-	for (numd = 0; numd < KULLANICI_HAREKET_BOYUTU; numd++)
-	{
-		if (fgets(str, MAX_CHAR, fp) == NULL)
-			break;
-
-		if (EOF == sscanf(str, "%lf,%lf,%lf,%lf", &t, &x, &y, &z)) // Read CSV line
-			break;
-
-		xyz[numd][0] = x;
-		xyz[numd][1] = y;
-		xyz[numd][2] = z;
-	}
-
-	fclose(fp);
-
-	return (numd);
-}
 
 void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver, outputConf_t* outputConf) {
 
 	receiverINIT(receiver);
     ecef_t p0 = {0, 0, 0};
-    char testvectPath[MAX_CHAR]  = {0};
-    char outfile[MAX_CHAR]		 = {0};
-	char umfile[MAX_CHAR]		 = {0}; //**********************
-	double xyz[KULLANICI_HAREKET_BOYUTU][3]; //*********************
-
-
+    char testvectPath[MAX_CHAR] = {0};
+    char outfile[MAX_CHAR] = {0};
 //    int timeoverwrite = false; // Overwrite the TOC and TOE in the RINEX file
     double llh[3] = {48.8435155,2.4297700,60};
     // Default options
@@ -127,53 +92,14 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
     int result;
 
     initInteruptionSignal();
-    while ((result = komut_getir(argc, argv, "b:l:o:s:u:i:d:hkv:")) != -1) {
+    while ((result = komut_getir(argc, argv, "b:l:o:s:i:d:hkv:")) != -1) {
         switch (result) {
             case 'v':
 				sprintf(testvectPath, "%s",opsiyon_argumani);
 				break;
             case 'l':
-
-				sscanf(opsiyon_argumani, "%lf,%lf,%lf", &llh[0], &llh[1], &llh[2]);
-				llh[0] = llh[0] / R2D;	// convert to RAD
-				llh[1] = llh[1] / R2D;	// convert to RAD
-				llh2xyz(llh, p0);		// Convert llh to xyz
-
-
-				receiver->type = STATIC;
-				receiver->mt->numd = 1;
-				free(receiver->mt->pList);
-				free(receiver->mt->tList);
-				receiver->mt->tList = NULL;
-				receiver->mt->pList = (ecef_t*)malloc(sizeof(ecef_t));
-				ecefCp(receiver->mt->pList[0], p0);
-
+                sscanf(opsiyon_argumani, "%lf,%lf,%lf", &llh[0], &llh[1], &llh[2]);
                 break;
-			case 'u'://****************
-				
-				strcpy(umfile, opsiyon_argumani);  // Kullanýcý dosya adýný kopyala
-
-				receiver->type = DYNAMIC;							// Hareket tipi dinamik olarak ayarlanýr
-				receiver->mt->numd = readUserMotion(xyz, umfile);	// Kullanýcý hareket verilerini oku
-
-				free(receiver->mt->pList);
-				free(receiver->mt->tList);
-			
-				receiver->mt->pList = (ecef_t*)malloc(receiver->mt->numd * sizeof(ecef_t));
-				receiver->mt->tList = (double*)malloc(receiver->mt->numd * sizeof(double));
-
-				if (receiver->mt->pList == NULL || receiver->mt->tList == NULL) {
-					fprintf(stderr, "Memory allocation failed for motion lists.\n");
-					exit(EXIT_FAILURE);
-				}
-
-				for (int i = 0; i < receiver->mt->numd; i++) {
-					ecefCp(receiver->mt->pList[i], xyz[i]); // Pozisyon kopyala
-					receiver->mt->tList[i] = i * DELTA_T;  // Zaman kopyala
-				}
-				printf("dinamik mod kullaniliyor  !!! \n ");
-
-				break;			
             case 'o':
             	sprintf(outfile, "%s", opsiyon_argumani);
                 break;
@@ -249,20 +175,24 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
 
     /* Set receiver position */
     printf("Replay position:\tlat:%lf lon:%lf alt:%.2lf\n", llh[0], llh[1], llh[2]);
-   
+    receiver->type = STATIC;
+    llh[0] = llh[0] / R2D; // convert to RAD
+    llh[1] = llh[1] / R2D; // convert to RAD
+    llh2xyz(llh, p0); // Convert llh to xyz
+	
+    setStatic( receiver->mt, p0);
+
 
     receiverUpdate(receiver);
 	
-
-
-
 	satData->neph = readTestvectToEph(satData->eph, satData->testvectFile, &receiver->gal0, &receiver->tmax);
 	for (int i = 0; i < satData->neph; i++)
 	{
 		ephemgal_t eph = satData->eph[i];
 		datetime_t toc_utc, toe_utc;
 
-		/*
+
+
 		printf("\n--- Ephemeris Data for Satellite ID: %d ---\n", eph.svId);
 		printf("Valid Flag (vflg): %d\n", eph.vflg);
 
@@ -299,8 +229,9 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
 		printf("Mean Motion (n): %.8e radians/sec\n", eph.n);
 		printf("sqrt(1-e^2): %.8e\n", eph.sq1e2);
 		printf("OmegaKDot: %.8e radians/sec\n", eph.omgkdot);
-		printf("------------------------------------------\n");*/
+		printf("------------------------------------------\n");
 	}
+
 	printf("Galileo start Time:\twn:%4d, tow:%.0f\n %d adet \n", receiver->gal0.wn, receiver->gal0.tow,satData->neph);
 	printf("Replay duration:\t%d s\n", receiver->tmax);
 
@@ -309,12 +240,26 @@ void readOption(int argc, char** argv, satData_t* satData, receiver_t* receiver,
         printf("Error no sat in testvector file.\n");
         exit(1);
     }
+	else
+	{
+		if ( verbose)
+		{
+			printEph(satData->eph);
+		}
+	}
 
-
-
-
-
-
+#ifdef HACKRFLINKED
+    if (outputConf->hackrf.hackrf_transfer && outputConf->dataType == I_dataType) {
+        printf("hackRF use IQ TYPE\n");
+        usage();
+        exit(1);
+    }
+    if (outputConf->hackrf.hackrf_transfer && outputConf->format == SC16) {
+        printf(" hackRF use 8bits data format");
+        usage();
+        exit(1);
+    }
+#endif
 
     ////////////////////////////////////////////////////////////
     // Baseband signal buffer and output file

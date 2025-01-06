@@ -65,6 +65,7 @@
             // 
             this.okuma_button.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.okuma_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.okuma_button.Enabled = false;
             this.okuma_button.Location = new System.Drawing.Point(3, 123);
             this.okuma_button.Name = "okuma_button";
             this.okuma_button.Size = new System.Drawing.Size(194, 54);
@@ -89,6 +90,7 @@
             // 
             this.yazma_button.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.yazma_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.yazma_button.Enabled = false;
             this.yazma_button.Location = new System.Drawing.Point(3, 3);
             this.yazma_button.Name = "yazma_button";
             this.yazma_button.Size = new System.Drawing.Size(194, 54);
