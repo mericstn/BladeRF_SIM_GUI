@@ -33,5 +33,6 @@ namespace bladeRF_GUI_v1.UserControls
             kurulum_yardimci = new F_KurulumYardimcisi();
             kurulum_yardimci.Show();
         }
+
     }
 }

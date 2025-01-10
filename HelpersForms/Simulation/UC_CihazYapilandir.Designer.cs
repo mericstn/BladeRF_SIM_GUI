@@ -55,6 +55,7 @@
             this.bladerf_tekrar_sayisi_textbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.calistirilacak_dosya_adi_textbox = new System.Windows.Forms.TextBox();
+            this.dosya_sec_combobox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -328,6 +329,7 @@
             this.tableLayoutPanel4.Controls.Add(this.bladerf_tekrar_sayisi_textbox, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.calistirilacak_dosya_adi_textbox, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.dosya_sec_combobox, 1, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(575, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -402,6 +404,15 @@
             this.calistirilacak_dosya_adi_textbox.TabIndex = 22;
             this.calistirilacak_dosya_adi_textbox.TextChanged += new System.EventHandler(this.calistirilacak_dosya_adi_textbox_TextChanged);
             // 
+            // dosya_sec_combobox
+            // 
+            this.dosya_sec_combobox.FormattingEnabled = true;
+            this.dosya_sec_combobox.Location = new System.Drawing.Point(286, 414);
+            this.dosya_sec_combobox.Name = "dosya_sec_combobox";
+            this.dosya_sec_combobox.Size = new System.Drawing.Size(121, 21);
+            this.dosya_sec_combobox.TabIndex = 23;
+            this.dosya_sec_combobox.SelectedIndexChanged += new System.EventHandler(this.dosya_sec_combobox_SelectedIndexChanged);
+            // 
             // UC_CihazYapilandir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +462,6 @@
         private System.Windows.Forms.TextBox bladerf_tekrar_sayisi_textbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox calistirilacak_dosya_adi_textbox;
+        private System.Windows.Forms.ComboBox dosya_sec_combobox;
     }
 }

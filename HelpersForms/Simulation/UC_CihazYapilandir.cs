@@ -29,17 +29,6 @@ namespace bladeRF_GUI_v1.HelpersForms
         public void guncelle()
         {
 
-            // To Do : Cihazı kullan sekmesi tam detaylı basit bir arayüzde yapılacak. Bu yardımcının amacına uymadığı için buraya koyulmayacaktır.
-            //if (Directory.Exists(_sim_cfg.galileo_cikti_klasor_yolu))
-            //{
-            //    string[] files = Directory.GetFiles(_sim_cfg.galileo_cikti_klasor_yolu); // Dosyaları al.
-            //    foreach (string file in files)
-            //    {
-            //        calisacak_dosya_adi_combobox.Items.Add(Path.GetFileName(file)); // Sadece dosya adını ekle.
-            //    }
-            //}
-
-            // -----simdilik -----
             if (_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
             {
                 calistirilacak_dosya_adi_textbox.Text = _sim_cfg.sim_csv_cikti_dosya_adi;
@@ -52,6 +41,7 @@ namespace bladeRF_GUI_v1.HelpersForms
             {
                 calistirilacak_dosya_adi_textbox.Text = _sim_cfg.galileo_cikti_dosya_adi;
             }
+            cikti_dosya_listele(_sim_cfg.gps_cikti_klasor_yolu);
         }
         private async void Cihaz_ac_button_Click(object sender, EventArgs e)
         {
@@ -244,6 +234,47 @@ namespace bladeRF_GUI_v1.HelpersForms
             else if (!_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
             {
                 _sim_cfg.galileo_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text ;
+            }
+        }
+        private void cikti_dosya_listele(string klasorYolu)
+        {
+            try
+            {     
+                string[] binDosyalar = Directory.GetFiles(klasorYolu, "*.bin");
+
+                dosya_sec_combobox.Items.Clear();
+                foreach (string dosya in binDosyalar)
+                {
+                    dosya_sec_combobox.Items.Add(Path.GetFileName(dosya)); 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void dosya_sec_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            if (dosya_sec_combobox.SelectedItem != null)
+            {
+         
+                if (_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
+                {
+                    _sim_cfg.sim_csv_cikti_dosya_adi = dosya_sec_combobox.SelectedItem.ToString();
+                    _sim_cfg.sim_csv_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text;
+                }
+                else if (_sim_cfg.gps_aktif && !_sim_cfg.galileo_aktif)
+                {
+                    _sim_cfg.gps_cikti_dosya_adi = dosya_sec_combobox.SelectedItem.ToString();
+                    _sim_cfg.gps_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text;
+                }
+                else if (!_sim_cfg.gps_aktif && _sim_cfg.galileo_aktif)
+                {
+                    _sim_cfg.galileo_cikti_dosya_adi = dosya_sec_combobox.SelectedItem.ToString();
+                    _sim_cfg.galileo_cikti_dosya_adi = calistirilacak_dosya_adi_textbox.Text;
+                }
+               
             }
         }
     }

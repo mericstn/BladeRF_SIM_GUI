@@ -33,6 +33,7 @@
             this.tekrarlayici_button = new System.Windows.Forms.Button();
             this.yazma_button = new System.Windows.Forms.Button();
             this.func_panel = new System.Windows.Forms.Panel();
+            this.tekrarlayici_interaktif_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tekrarlayici_interaktif_button, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.okuma_button, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tekrarlayici_button, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.yazma_button, 0, 0);
@@ -107,6 +109,19 @@
             this.func_panel.Size = new System.Drawing.Size(1000, 600);
             this.func_panel.TabIndex = 1;
             // 
+            // tekrarlayici_interaktif_button
+            // 
+            this.tekrarlayici_interaktif_button.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.tekrarlayici_interaktif_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tekrarlayici_interaktif_button.Enabled = false;
+            this.tekrarlayici_interaktif_button.Location = new System.Drawing.Point(3, 183);
+            this.tekrarlayici_interaktif_button.Name = "tekrarlayici_interaktif_button";
+            this.tekrarlayici_interaktif_button.Size = new System.Drawing.Size(194, 54);
+            this.tekrarlayici_interaktif_button.TabIndex = 3;
+            this.tekrarlayici_interaktif_button.Text = "İnteraktif Tekrarlayıcı";
+            this.tekrarlayici_interaktif_button.UseVisualStyleBackColor = false;
+            this.tekrarlayici_interaktif_button.Click += new System.EventHandler(this.terkarlayici_interaktif_button_Click);
+            // 
             // UC_Fonksiyonlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +143,6 @@
         private System.Windows.Forms.Button yazma_button;
         private System.Windows.Forms.Panel func_panel;
         private System.Windows.Forms.Button okuma_button;
+        private System.Windows.Forms.Button tekrarlayici_interaktif_button;
     }
 }

@@ -27,12 +27,13 @@ namespace bladeRF_GUI_v1
         // digerleri gelecek....
 
         /*-------------- CLI Dizinleri----------------------*/
-        public string gps_cli_dosya_yolu        { get; set; }
-        public string galileo_cli_dosya_yolu    { get; set; }
-        public string bladerf_cli_dosya_yolu    { get; set; }
-        public string repeater_cli_dosya_yolu    { get; set; }
-        public string repeater_parametre_dosya_yolu   { get; set; }
-        public string prog_cmd_dosya_yolu       { get; set; } = @"C:\Windows\system32\cmd.exe"; // C dizini icin Statik 
+        public string gps_cli_dosya_yolu                 { get; set; }
+        public string galileo_cli_dosya_yolu             { get; set; }
+        public string bladerf_cli_dosya_yolu             { get; set; }
+        public string repeater_cli_dosya_yolu            { get; set; }
+        public string repeater_interaktif_cli_dosya_yolu { get; set; }
+        public string repeater_parametre_dosya_yolu      { get; set; }
+        public string prog_cmd_dosya_yolu                { get; set; } = @"C:\Windows\system32\cmd.exe"; // C dizini icin Statik 
 
 
         public C_Ayarlar()
@@ -42,20 +43,21 @@ namespace bladeRF_GUI_v1
             program_satgen = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "SatgenNMEA", "SatGenNMEA.exe"));
            
             
-            program_sdr_console = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "SDR_radio", "SDR Console.exe"));
-            program_ez_usb = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "ez","Eclipse", "ezUsbSuite.exe"));
-            program_gpif2 = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "ez","GPIFII Designer", "bin","cygraphicaltool.exe"));
-            program_gnu_radio = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "radioconda", "Scripts", "gnuradio-companion.exe"));
-            program_gnu_radio_python = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "radioconda", "python.exe"));
-            program_gnu_radio_cwp = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "radioconda", "cwp.py"));
+            program_sdr_console         = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "SDR_radio", "SDR Console.exe"));
+            program_ez_usb              = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "ez","Eclipse", "ezUsbSuite.exe"));
+            program_gpif2               = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "ez","GPIFII Designer", "bin","cygraphicaltool.exe"));
+            program_gnu_radio           = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "radioconda", "Scripts", "gnuradio-companion.exe"));
+            program_gnu_radio_python    = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "radioconda", "python.exe"));
+            program_gnu_radio_cwp       = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "radioconda", "cwp.py"));
 
             gps_cli_dosya_yolu      = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "SimpleCode", "x64", "Release", "SimpleCode.exe"));
             galileo_cli_dosya_yolu  = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "gal_osnma_sim", "x64", "Debug", "gal_osnma_sim.exe"));
             bladerf_cli_dosya_yolu  = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "bladeRF", "x64", "bladeRF-cli.exe"));
 
 
-            repeater_cli_dosya_yolu         = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "BladeRF_Repeater", "x64","Debug", "BladeRF_Repeater.exe")); 
-            repeater_parametre_dosya_yolu   = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Inputs", "BladeRF", "application_parameters.csv")); 
+            repeater_cli_dosya_yolu             = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "BladeRF_Repeater", "x64","Debug", "BladeRF_Repeater.exe"));
+            repeater_interaktif_cli_dosya_yolu  = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Programs", "repeater_new", "x64","Debug", "repeater_new.exe")); 
+            repeater_parametre_dosya_yolu       = Path.GetFullPath(Path.Combine(program_dizini, "..", "..", "Inputs", "BladeRF", "application_parameters.csv")); 
 
 
         }

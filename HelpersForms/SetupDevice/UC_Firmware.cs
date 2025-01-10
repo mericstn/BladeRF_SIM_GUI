@@ -49,7 +49,7 @@ namespace bladeRF_GUI_v1.HelpersForms.SetupDevice
             DialogResult dresult = MessageBox.Show($"Dosya:\n{_sim_cfg.bladerf_firmware_dosya_yolu}", "Bu dosya ile cihazın güncellenmesini onaylıyor musunuz ? ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dresult == DialogResult.Yes)
             {
-                var (result, arguments) = _sim_cfg.bladerf_komut_isleyicisi("--flash-firmware", _sim_cfg.bladerf_fw_bilgi);
+                var (result, arguments) = _sim_cfg.bladerf_komut_isleyicisi(_sim_cfg.bladerf_firmware_dosya_yolu,"--flash-firmware" );
                 MessageBox.Show($"Komut:\n{arguments}\n\nSonuç:\n{result}", "bladeRF Komut Sonucu", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 

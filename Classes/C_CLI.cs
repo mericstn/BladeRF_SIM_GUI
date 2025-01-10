@@ -10,6 +10,7 @@ namespace bladeRF_GUI_v1.Classes
     class C_CLI
     {
         private C_Ayarlar _ayarlar;
+
         public C_CLI(C_Ayarlar ayarlar)
         {
             _ayarlar = ayarlar;

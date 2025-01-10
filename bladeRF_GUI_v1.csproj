@@ -79,6 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUserControls\C_Uygulamalar.cs" />
+    <Compile Include="ApplicationUserControls\UC_Interaktif_Tekrarlayici.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationUserControls\UC_Interaktif_Tekrarlayici.Designer.cs">
+      <DependentUpon>UC_Interaktif_Tekrarlayici.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationUserControls\UC_Okuma.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     <Compile Include="UserInfo\F_BilgilendirmeKutucugu.Designer.cs">
       <DependentUpon>F_BilgilendirmeKutucugu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplicationUserControls\UC_Interaktif_Tekrarlayici.resx">
+      <DependentUpon>UC_Interaktif_Tekrarlayici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationUserControls\UC_Okuma.resx">
       <DependentUpon>UC_Okuma.cs</DependentUpon>
     </EmbeddedResource>

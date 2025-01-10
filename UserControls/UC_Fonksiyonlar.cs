@@ -13,19 +13,23 @@ namespace bladeRF_GUI_v1.UserControls
 {
     public partial class UC_Fonksiyonlar : UserControl
     {
-        private UC_Okuma            uc_okuma;
-        private UC_Yazma            uc_yazma;
-        private UC_Tekrarlayici     uc_tekrarlayici;
-        private C_Ayarlar           c_ayarlar;
+        private UC_Okuma                    uc_okuma;
+        private UC_Yazma                    uc_yazma;
+        private UC_Tekrarlayici             uc_tekrarlayici;
+        private UC_Interaktif_Tekrarlayici  uc_tekrarlayici_interaktif;
+        private C_Ayarlar                   c_ayarlar;
+        private C_CLI                       c_cli;
 
         public UC_Fonksiyonlar(C_Ayarlar _ayarlar)
         {
             
             InitializeComponent();
-            c_ayarlar           = _ayarlar;
-            uc_okuma            = new UC_Okuma(); // todo ayarlar eklenecek
-            uc_yazma            = new UC_Yazma(); // todo ayarlar eklenecek
-            uc_tekrarlayici     = new UC_Tekrarlayici(c_ayarlar);
+            c_ayarlar                   = _ayarlar;
+            c_cli                       = new C_CLI(c_ayarlar);
+            uc_tekrarlayici_interaktif  = new UC_Interaktif_Tekrarlayici(c_ayarlar);
+            uc_okuma                    = new UC_Okuma(); // todo ayarlar eklenecek
+            uc_yazma                    = new UC_Yazma(); // todo ayarlar eklenecek
+            uc_tekrarlayici             = new UC_Tekrarlayici(c_ayarlar);
         }
         private void AddUserControl(UserControl userControl)
         {
@@ -36,10 +40,11 @@ namespace bladeRF_GUI_v1.UserControls
         }
         private void UpdateButtonColors(Button activeButton)
         {
-            yazma_button.BackColor              = Color.LightGoldenrodYellow;
-            okuma_button.BackColor              = Color.LightGoldenrodYellow;
-            tekrarlayici_button.BackColor       = Color.LightGoldenrodYellow;
-            activeButton.BackColor              = Color.IndianRed;
+            yazma_button.BackColor                          = Color.LightGoldenrodYellow;
+            okuma_button.BackColor                          = Color.LightGoldenrodYellow;
+            tekrarlayici_button.BackColor                   = Color.LightGoldenrodYellow;
+            tekrarlayici_interaktif_button.BackColor        = Color.LightGoldenrodYellow;
+            activeButton.BackColor                          = Color.IndianRed;
 
         }
 
@@ -60,6 +65,12 @@ namespace bladeRF_GUI_v1.UserControls
         {
             AddUserControl(uc_okuma);
             UpdateButtonColors(okuma_button);
+        }
+
+        private async void terkarlayici_interaktif_button_Click(object sender, EventArgs e)
+        {
+            AddUserControl(uc_tekrarlayici_interaktif);
+            UpdateButtonColors(tekrarlayici_interaktif_button);
         }
     }
 }
